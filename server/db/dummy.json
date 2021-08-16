@@ -2,7 +2,8 @@
   "human": [
     {
       "id": "jBWMVGjm50l6LGwepDoty",
-      "username": "loQL"
+      "username": "loQL",
+      "pets": ["jBWMVGjm50l5LGwepDoty1"]
     }, 
     {
       "id": "jBWMVGjm50l5LGwepDoty",
@@ -11,6 +12,20 @@
     {
       "id":"908fnsdkjf8SDn",
       "username": "ioQL3"
+    }
+  ],
+  "pet": [
+    {
+      "id": "jBWMVGjm50l5LGwepDoty1",
+      "name": "Ellie",
+      "type": "Terrier",
+      "owner": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "jBWMVGjm50l5LGwepDoty12",
+      "name": "Filo",
+      "type": "Boxer",
+      "owner": "jBWMVGjm50l6LGwepDoty"
     }
   ]
 }
