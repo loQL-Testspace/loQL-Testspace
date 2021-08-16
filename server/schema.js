@@ -10,9 +10,13 @@ const typeDefs = gql`
     username: String!
   }
 
-  type Query {
-    human: Human!
+  input HumanQuery {
+    id: String!
+  }
 
+  type Query {
+    human (input: HumanQuery!): Human!
+    
   }
 
   type Mutation {

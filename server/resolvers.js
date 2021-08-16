@@ -1,10 +1,8 @@
 export default {
   Query: {
-    human(_, {input}, {models}) {
-      return models.human.findMany(input || {})
-    },
-    human(_, {id}, {models}) {
-      return models.human.findOne({id})
+    human(_, args, {models}) {
+      console.log(args, models);
+      return models.Human.findOne(args)
     }
   }
 };

@@ -1,16 +1,19 @@
 import low from 'lowdb'
-import FileSync  from 'lowdb/adapters/FileSync'
+import FileSync from 'lowdb/adapters/FileSync.js'
 import createHumanModel from './humans.js';
 
-const adapter = new FileSync('./dummy.json');
-const db = low(adapter);
+const adapter = new FileSync('server/db/dummy.json');
+export const db = low(adapter);
 
 // other models later
+export const models = {
+  Human: createHumanModel(db)
+}
 
-export default {
-  models: {
-    Human: createHumanModel(db),
-    // User: createUserModel(db),
-  },
-  db
-};
+// export {
+//   models: {
+//     Human: createHumanModel(db),
+//     // User: createUserModel(db),
+//   },
+//   db
+// };
