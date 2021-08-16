@@ -8,6 +8,7 @@ export default {
   entry: {
     index: './client/index.js',
     handlers: './client/handlers.js',
+    sw: './node_modules/loql/sw.js',
   },
   output: {
     path: path.resolve(__dirname, 'build'),
