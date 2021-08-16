@@ -1,0 +1,33 @@
+{
+  "type": "module",
+  "name": "Test-Enviorment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jae-ryu/Test-Enviorment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jae-ryu/Test-Enviorment/issues"
+  },
+  "homepage": "https://github.com/jae-ryu/Test-Enviorment#readme",
+  "dependencies": {
+    "apollo-server": "^3.1.2",
+    "babel-core": "^6.26.3",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1",
+    "graphql-tag": "^2.12.5",
+    "lowdb": "^2.1.0",
+    "nanoid": "^3.1.25",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7"
+  }
+}
