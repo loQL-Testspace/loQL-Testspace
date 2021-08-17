@@ -14,5 +14,11 @@ export default {
       const human = models.Human.findOne({id: pet.owner})
       return {...pet, owner: human}
     },
+  },
+  Mutation: {
+    addHuman(_, { input }, { models }) {
+      const human = models.Human.create({ username: input.username });
+      return human;
+    },
   }
 };
