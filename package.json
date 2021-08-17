@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "Test-Enviorment",
+  "name": "test-enviorment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
