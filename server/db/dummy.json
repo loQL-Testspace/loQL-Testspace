@@ -1,17 +1,22 @@
 {
   "human": [
     {
-      "id": "jBWMVGjm50l6LGwepDoty",
-      "username": "loQL",
-      "pets": ["jBWMVGjm50l5LGwepDoty1"]
+      "id": "1",
+      "name": "loQL",
+      "pets": [{
+        "id": "jBWMVGjm50l5LGwepDoty1",
+        "name": "Ellie",
+        "type": "Terrier",
+        "owner": "1"
+      }]
     }, 
     {
-      "id": "jBWMVGjm50l5LGwepDoty",
-      "username": "loQL2"
+      "id": "2",
+      "name": "loQL2"
     },
     {
-      "id":"908fnsdkjf8SDn",
-      "username": "ioQL3"
+      "id":"3",
+      "name": "ioQL3"
     }
   ],
   "pet": [
@@ -19,13 +24,13 @@
       "id": "jBWMVGjm50l5LGwepDoty1",
       "name": "Ellie",
       "type": "Terrier",
-      "owner": "jBWMVGjm50l6LGwepDoty"
+      "owner": "1"
     },
     {
       "id": "jBWMVGjm50l5LGwepDoty12",
       "name": "Filo",
       "type": "Boxer",
-      "owner": "jBWMVGjm50l6LGwepDoty"
+      "owner": "1"
     }
   ]
 }
