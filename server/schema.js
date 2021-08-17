@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Human {
     id: ID!
     username: String!
+    pets: [Pet]
   }
 
   input NewHumanInput {
@@ -14,9 +15,26 @@ const typeDefs = gql`
     id: String!
   }
 
+  type Pet {
+    id: ID!
+    name: String!
+    type: String!
+    owner: Human!
+  }
+
+  input PetQuery {
+    id: String!
+  }
+
+  input NewPetInput {
+    name: String!
+    type: String!
+    owner: String!
+  }
+
   type Query {
     human (input: HumanQuery!): Human!
-    
+    pet (input: PetQuery!): Pet!
   }
 
   type Mutation {
