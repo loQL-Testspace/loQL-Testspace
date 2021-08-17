@@ -3,12 +3,23 @@ import { gql } from 'apollo-server';
 const typeDefs = gql`
   type Human {
     id: ID!
-    username: String!
-    pets: [Pet]
+    name: String!
+    pets: [Pet]!
+    gender: String!
+    hair: String!
+    favoriteNum: Int!
+    alive: Boolean!
+    createdAt: Int!
   }
-
+  
   input NewHumanInput {
-    username: String!
+    id: ID
+    name: String
+    gender: String
+    hair: String
+    favoriteNum: Int
+    alive: Boolean
+    createdAt: Int
   }
 
   input HumanQuery {
@@ -20,16 +31,19 @@ const typeDefs = gql`
     name: String!
     type: String!
     owner: Human!
+    createdAt: Int!
   }
 
   input PetQuery {
-    id: String!
+    id: ID!
   }
 
   input NewPetInput {
+    id: String!
     name: String!
     type: String!
     owner: String!
+    createdAt: Int!
   }
 
   type Query {
@@ -40,6 +54,7 @@ const typeDefs = gql`
   type Mutation {
     addHuman (input: NewHumanInput!): Human!
   }
-`;
+`
+
 
 export default typeDefs;
