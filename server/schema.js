@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Human {
     id: ID!
     name: String!
-    pets: [Pet]!
+    pets: [Pet!]
     gender: String!
     hair: String!
     favoriteNum: Int!
@@ -32,6 +32,7 @@ const typeDefs = gql`
     type: String!
     owner: Human!
     createdAt: Int!
+    toys: [Toy!]
   }
 
   input PetQuery {
@@ -46,9 +47,24 @@ const typeDefs = gql`
     createdAt: Int!
   }
 
+  type Toy {
+    id: ID!
+    name: String!
+    price: Int!
+    weight: Int!
+    color: String!
+    pets: [Pet!]
+  }
+
+  input ToyQuery {
+    id: ID!
+  }
+
   type Query {
     human (input: HumanQuery!): Human!
+    humans: [Human!]!
     pet (input: PetQuery!): Pet!
+    toy (input: ToyQuery!): Toy!
   }
 
   type Mutation {

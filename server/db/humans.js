@@ -19,7 +19,7 @@ const createHumanModel = db => {
         const newHuman = {id: nanoid(), createdAt: Date.now(), ...human}
         
         db.get('human')
-          .push(newHuman)
+          .push(newHuman) 
           .write()
   
         return newHuman
