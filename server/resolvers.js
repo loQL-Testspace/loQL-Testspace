@@ -1,24 +1,45 @@
 export default {
   Query: {
-    human(_, {input}, {models}) {
-      console.log(input.id, models);
-      // return models.Human.findOne({id: input.id})
-      const human = models.Human.findOne({id: input.id});
-      const pets = models.Pet.findMany({owner: input.id})
-      // console.log("pets", pets);
-      return {...human, pets: pets}
+    humans(_, __, { models }) {
+      return models.Human.findMany({});
     },
-    pet(_, {input}, {models}) {
-      // console.log(input);
-      const pet = models.Pet.findOne({id: input.id})
-      const human = models.Human.findOne({id: pet.owner})
-      return {...pet, owner: human}
+
+    human(_, { input }, { models }) {
+      const human = models.Human.findOne({ id: input.id });
+      const allPets = [];
+      for (let i = 0; i < human.pets.length; i++) {
+        const pet = models.Pet.findOne({ id: human.pets[i] });
+        allPets.push(pet);
+      }
+
+      return { ...human, pets: allPets };
+    },
+
+    pet(_, { input }, { models }) {
+      const pet = models.Pet.findOne({ id: input.id });
+      const human = models.Human.findOne({ id: pet.owner });
+      const allToys = [];
+      for (let i = 0; i < pet.toys.length; i++) {
+        const toy = models.Toy.findOne({ id: pet.toys[i] });
+        allToys.push(toy);
+      }
+      return { ...pet, owner: human, toys: allToys };
+    },
+
+    toy(_, { input }, { models }) {
+      const toy = models.Toy.findOne({ id: input.id });
+      const allPets = [];
+      for (let i = 0; i < toy.pets.length; i++) {
+        const pet = models.Pet.findOne({ id: toy.pets[i] });
+        allPets.push(pet);
+      }
+      return { ...toy, pets: allPets };
     },
   },
   Mutation: {
     addHuman(_, { input }, { models }) {
-      const human = models.Human.create({ username: input.username });
+      const human = models.Human.create({ username: input.name });
       return human;
     },
-  }
+  },
 };

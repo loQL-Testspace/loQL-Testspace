@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
     "start:client": "NODE_ENV=development webpack serve --open",
-    "build:client": "webpack"
+    "build:client": "webpack",
+    "start:client:pokemon": "NODE_ENV=development webpack serve --config ./webpack.pokemon.config.js --open",
+    "build:client:pokemon": "webpack --config ./webpack.pokemon.config.js"
   },
   "repository": {
     "type": "git",
