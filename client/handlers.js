@@ -20,7 +20,17 @@ queryButton.addEventListener('click', (e) => {
     }),
   })
     .then((r) => r.json())
-    .then((data) => console.log('response from query:', data));
+    .then((data) => console.log('Response from query:', data));
+  console.log('You clicked the query button.');
+});
+
+const queryGetButton = document.getElementById('query2');
+queryGetButton.addEventListener('click', (e) => {
+  fetch(
+    'http://localhost:4000/graphql?query=query{human(input:{id:"1"}){name}}'
+  )
+    .then((r) => r.json())
+    .then((data) => console.log('Response from query:', data));
   console.log('You clicked the query button.');
 });
 
@@ -47,4 +57,3 @@ mutationButton.addEventListener('click', (e) => {
   console.log('You clicked the query button.');
   console.log('This is the mutation button.');
 });
-
