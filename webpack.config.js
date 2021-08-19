@@ -10,6 +10,7 @@ export default {
     handlers: './client/handlers.js',
     sw: './node_modules/loql/sw.js',
   },
+  devtool: 'eval-source-map',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
