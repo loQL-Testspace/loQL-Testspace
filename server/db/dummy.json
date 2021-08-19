@@ -1,17 +1,30 @@
 {
   "human": [
     {
-      "id": "jBWMVGjm50l6LGwepDoty",
-      "username": "loQL",
-      "pets": ["jBWMVGjm50l5LGwepDoty1"]
-    }, 
-    {
-      "id": "jBWMVGjm50l5LGwepDoty",
-      "username": "loQL2"
+      "id": "1",
+      "name": "loQL",
+      "pets": [
+        "jBWMVGjm50l5LGwepDoty1",
+        "jBWMVGjm50l5LGwepDoty12"
+      ]
     },
     {
-      "id":"908fnsdkjf8SDn",
-      "username": "ioQL3"
+      "id": "2",
+      "name": "loQL2"
+    },
+    {
+      "id": "3",
+      "name": "ioQL3"
+    },
+    {
+      "id": "vpqKTNUO4r1RSl4jwCTt3",
+      "createdAt": 1629228820053,
+      "name": "lolcat"
+    },
+    {
+      "id": "u3vngfOuiM5iGLjzR1gQM",
+      "createdAt": 1629229190610,
+      "name": "lolcat"
     }
   ],
   "pet": [
@@ -19,13 +32,29 @@
       "id": "jBWMVGjm50l5LGwepDoty1",
       "name": "Ellie",
       "type": "Terrier",
-      "owner": "jBWMVGjm50l6LGwepDoty"
+      "owner": "1",
+      "createdAt": 1629458820053,
+      "toys": ["24"]
     },
     {
       "id": "jBWMVGjm50l5LGwepDoty12",
       "name": "Filo",
       "type": "Boxer",
-      "owner": "jBWMVGjm50l6LGwepDoty"
+      "owner": "1",
+      "createdAt": 1629458820052
+    }
+  ],
+  "toy": [
+    {
+      "id": "24",
+      "name": "Rabb",
+      "price": 201,
+      "weight": 700,
+      "color": "yellow",
+      "pets": [
+        "jBWMVGjm50l5LGwepDoty1",
+        "jBWMVGjm50l5LGwepDoty12"
+      ]
     }
   ]
 }
