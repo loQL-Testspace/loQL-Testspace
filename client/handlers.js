@@ -15,7 +15,7 @@ queryButton.addEventListener("click", (e) => {
               }
             `,
             variables: {
-                id: "jBWMVGjm50l5LGwepDoty"
+                id: "1"
             }
         })
     })
