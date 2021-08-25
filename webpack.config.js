@@ -47,6 +47,7 @@ export default {
   ],
   devServer: {
     contentBase: './client',
+    historyApiFallback: true,
     proxy: {
       '/api/**': {
         target: 'http://localhost:4000/',
