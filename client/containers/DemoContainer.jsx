@@ -8,6 +8,9 @@ register({cacheExpirationLimit: 20000, cacheMethod: "cache-network"}); // sw.js
 const DemoContainer = () => {
 
   const [activateSummary, setActivateSummary] = useState(false);
+  const [data , setData] = useState({});
+  const [counter, setCounter] = useState (0);
+  const [labels, setLabels] = useState([]);
 
   // logic to change activateSummary to true when buttons are pressed
   // const openSummary = 
@@ -70,11 +73,30 @@ const DemoContainer = () => {
     };
 
     const getSummary = async () => {
-      return await summary();
-
+      // return await summary();
+      let result = await summary();
+      setData(result);
     }
 
-    // console.log('result in democontainer =', getSummary());
+    console.log('result in democontainer =', getSummary());
+
+
+    useEffect(async () =>{
+      let result = await summaryResult();
+        setData(result);
+    
+    }, [])
+
+
+    const incrementCounter = () => {
+      setCounter(counter++);
+    }
+
+    console.log(counter);
+
+    useEffect (() => {
+      setLabels(labels.push(`Query #${counter}`));
+    }, [counter])
 
     useEffect(() => {
       const script = document.createElement('script');
@@ -89,14 +111,14 @@ const DemoContainer = () => {
   return (
     <div>
       <div className="demoButtons">
-        <button className="queries" id="query1" onClick={queryButton}>Get Human Query </button>
-        <button className="queries" id="query2" onClick={queryGetButton} >Get Human Query </button>
-        <button className="mutations" id="mutation1" onClick={mutationButton}>Add Human Mutation </button>  
+        <button className="queries" id="query1" onClick={queryButton, getSummary, incrementCounter}>Get Human Query </button>
+        <button className="queries" id="query2" onClick={queryGetButton, getSummary, incrementCounter} >Get Human Query </button>
+        <button className="mutations" id="mutation1" onClick={mutationButton, getSummary, incrementCounter}>Add Human Mutation </button>  
       </div>
       {/* {activateSummary && <Graph summaryResult={result} />} */}
-      <Graph summaryResult={getSummary} />
+      <Graph metricData={data} labelArr={labels} />
     </div>
-   
+  
   )
 }
 
