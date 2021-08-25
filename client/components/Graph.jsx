@@ -1,13 +1,14 @@
 import React , { useEffect, useState }from 'react';
 import { register } from 'loql';
-import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js'
+import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js';
 
 
 const Graph = ({summaryResult}) => {
   
   
-  let result = summaryResult() 
-  console.log(result);
+  let result = async summaryResult();
+  console.log('result in graph =', result);
+  
   return (
     <div>
       <div id="graph">

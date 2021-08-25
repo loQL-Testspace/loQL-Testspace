@@ -1,7 +1,7 @@
 import React , { useEffect, useState }from 'react';
 import { register } from 'loql';
-import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js'
-import Graph from '../components/Graph.jsx'
+import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js';
+import Graph from '../components/Graph.jsx';
 
 register({cacheExpirationLimit: 20000, cacheMethod: "cache-network"}); // sw.js
 
@@ -74,7 +74,7 @@ const DemoContainer = () => {
 
     }
 
-    console.log('result in democontainer =', getSummary());
+    // console.log('result in democontainer =', getSummary());
 
     useEffect(() => {
       const script = document.createElement('script');
