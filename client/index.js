@@ -1,6 +1,10 @@
-import { register } from 'loql';
+import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { render } from 'react-dom';
+import App from './app.jsx';
 
-register(); // sw.js
-
-console.log('Hello world.');
-
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  , document.getElementById('root'));
