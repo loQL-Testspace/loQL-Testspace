@@ -7,9 +7,11 @@ import Demo from "./components/Demo.jsx"
 const App = () => {
   return (
     <Router>
-      {/* <NavBar /> */}
+      <NavBar />
       <Switch>
-        <Demo />
+        <Route path="/demo">
+          <Demo />
+        </Route>
       </Switch>
     </Router>
   );
