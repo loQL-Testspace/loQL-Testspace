@@ -4,7 +4,6 @@ import createHumanModel from './humans.js';
 import createPetModel from './pet.js';
 import createToyModel from './toy.js';
 
-
 const adapter = new FileSync('server/db/dummy.json');
 export const db = low(adapter);
 
