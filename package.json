@@ -8,9 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js",
     "start:client": "NODE_ENV=development webpack serve --open",
-    "build:client": "webpack",
-    "start:client:pokemon": "NODE_ENV=development webpack serve --config ./webpack.pokemon.config.js --open",
-    "build:client:pokemon": "webpack --config ./webpack.pokemon.config.js"
+    "build:client": "NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -32,7 +30,6 @@
     "html-webpack-plugin": "^5.3.2",
     "lowdb": "^1.0.0",
     "nanoid": "^2.1.1",
-    "nodemon": "^2.0.12",
     "path": "^0.12.7",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.8.0",
