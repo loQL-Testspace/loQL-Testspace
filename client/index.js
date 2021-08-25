@@ -1,5 +1,10 @@
-// import { register } from 'loql';
+import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { render } from 'react-dom';
+import App from './app.jsx';
 
-// // User passes in configuration object into registration function
-// // The function will save these settings to IDB so they can be accessed by the service worker
-// register({});
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  , document.getElementById('root'));
