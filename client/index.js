@@ -8,4 +8,3 @@ render(
     <App />
   </BrowserRouter>
   , document.getElementById('root'));
->>>>>>> Stashed changes
