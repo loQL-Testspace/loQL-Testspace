@@ -3,8 +3,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './app.jsx';
 
-render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  , document.getElementById('root'));
+// User passes in configuration object into registration function
+// The function will save these settings to IDB so they can be accessed by the service worker
+register({ useMetrics: true, cacheExpirationLimit: 1000, doNotCache: ['capture_rate']});
