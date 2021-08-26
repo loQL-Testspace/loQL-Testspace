@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.scss';
 
 const NavBar = () => {
   return (
     <div className='navBar'>
-      <div className='navLeft'>
+      <div className  ='navLeft'>
         <img id='brand' />
       </div>
       <div className='navRight'>
