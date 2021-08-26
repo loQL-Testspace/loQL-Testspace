@@ -5,7 +5,7 @@ import { query1, query3, query4 } from "../queries";
 import "./Demo.scss";
 import ReactJson from 'react-json-view'
 
-register({ cacheExpirationLimit: 20000, cacheMethod: "cache-network" }); // sw.js
+register({ cacheExpirationLimit: 2000, cacheMethod: "cache-network" }); // sw.js
 
 const Demo = () => {
   const [lastQueryData, setLastQueryData] = useState({});
@@ -40,6 +40,7 @@ const Demo = () => {
         <button className={"queries"} onClick={() => performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query4)}>Nested Pokemon Query </button>
         <button className={"mutations"} onClick={() => performGQLQuery('/api/graphql', mutation1)}>Add Human Mutation </button>
       </div>
+      <p>{lastQueryData.lastApiCall ? "Fetched from cache." : "Fetched from API."}</p>
       <ReactJson src={lastQueryData} enableClipboard={false} collapsed={3} displayDataTypes={false}/>
     </div>
   )
