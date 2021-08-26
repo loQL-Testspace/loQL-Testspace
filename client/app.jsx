@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NavBar from "./components/Navbar.jsx"
-import Demo from "./components/Demo.jsx"
+import DemoContainer from "./containers/DemoContainer.jsx"
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <div className="content-wrapper">
         <Switch>
         <Route path="/demo">  
-          <Demo />
+          <DemoContainer />
         </Route>
         </Switch>
       </div>
