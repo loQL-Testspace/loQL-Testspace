@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverf
 export default {
   entry: {
     index: './client/index.js',
+    bundle: './client/app.jsx',
     sw: './node_modules/loql/sw.js',
   },
   devtool: 'eval-source-map',
@@ -24,7 +25,6 @@ export default {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-react'],
-          // plugins: ['@babel/plugin-transform-runtime', '@babel/transform-async-to-generator'],
         },
       },
       {
@@ -47,6 +47,7 @@ export default {
   ],
   devServer: {
     contentBase: './client',
+    historyApiFallback: true,
     proxy: {
       '/api/**': {
         target: 'http://localhost:4000/',

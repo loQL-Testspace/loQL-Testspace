@@ -1,0 +1,28 @@
+@use '../variables';
+
+.demo-content {
+  padding: 1em;
+}
+
+.button-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 0.5em;
+  button {
+    padding: 0.25em;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: variables.$theme-color;
+    border-radius: 3px;
+    border: none;
+    padding: 0.5em 0.85em;
+    &:hover {
+      filter: brightness(108%);
+      cursor: pointer;
+    }
+  }
+  margin-bottom: 1em;
+}
+
+pre.__json-pretty__ {
+  padding: 1em;
+}

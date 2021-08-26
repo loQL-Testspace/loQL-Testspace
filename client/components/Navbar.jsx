@@ -1,27 +1,24 @@
 import React from 'react';
-//TODO
-//Left Side
-  //add brand image that redirects us to our home page
-//Right Side
-  //About, Docs, Learn?, Team, Github, Npm
+import { Link } from 'react-router-dom';
+import './Navbar.scss';
+
 const NavBar = () => {
-  
   return (
     <div className='navBar'>
-      <div className='navLeft'>
+      <div className  ='navLeft'>
         <img id='brand' />
       </div>
       <div className='navRight'>
-        <div>
-          <a href='#'>Docs</a>
-          <a href='#'>Demo</a>
-          <a href='#'>Tutorial</a>
-          <a href='#'>Team</a>
+        <div className="site-links">
+          <Link to="/docs">Docs</Link>
+          <Link to="/demo">Demo</Link>
+          <Link to="/tutorial">Tutorial</Link>
+          <Link to="/team">Team</Link>
         </div>
-          <div className='name'>
-            <a href='#'></a>
-            <a href='#'></a>
-          </div>
+        <div className='external-links'>
+          <Link to="https://github.com/oslabs-beta/loQL/tree/harrisoncramer"></Link>
+          <Link to="INSERT_FINISHED_NPM_LINK_HERE"></Link>
+        </div>
       </div>
     </div>
   )
