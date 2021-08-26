@@ -1,0 +1,52 @@
+@use '../variables';
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:1em 2em;
+}
+
+.navLeft a{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: variables.$theme-color-chart-blue;
+    text-decoration: none;
+}
+
+.navRight{
+    text-align: right;
+}
+
+.navRight a{
+    padding-left:20px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: variables.$theme-color-light-black;  
+}
+
+.navRight a:hover {
+    color: variables.$theme-color-chart-blue;
+    }
+
+.external{
+    font-size: 17px;
+}
+
+@media screen and ( max-width: 800px ) {
+
+    .navBar {
+        padding:1em;
+    }
+    .navRight a{
+        padding-left:10px;
+        font-size: 15px;
+       }
+       .external{
+        font-size: 13px;
+    }   
+
+}
