@@ -78,11 +78,11 @@ const DemoContainer = () => {
       setData(result);
     }
 
-    console.log('result in democontainer =', getSummary());
+    // console.log('result in democontainer =', getSummary());
 
 
     useEffect(async () =>{
-      let result = await summaryResult();
+      let result = await summary();
         setData(result);
     
     }, [])
@@ -111,9 +111,9 @@ const DemoContainer = () => {
   return (
     <div>
       <div className="demoButtons">
-        <button className="queries" id="query1" onClick={queryButton, getSummary, incrementCounter}>Get Human Query </button>
-        <button className="queries" id="query2" onClick={queryGetButton, getSummary, incrementCounter} >Get Human Query </button>
-        <button className="mutations" id="mutation1" onClick={mutationButton, getSummary, incrementCounter}>Add Human Mutation </button>  
+        <button className="queries" id="query1" onClick={()=>queryButton}>Get Human Query </button>
+        <button className="queries" id="query2" onClick={()=>queryGetButton}>Get Human Query </button>
+        <button className="mutations" id="mutation1" onClick={()=>mutationButton}>Add Human Mutation </button>  
       </div>
       {/* {activateSummary && <Graph summaryResult={result} />} */}
       <Graph metricData={data} labelArr={labels} />

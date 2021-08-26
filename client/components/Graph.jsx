@@ -36,8 +36,7 @@ const Graph = ({metricData, labelsArr}) => {
   return (
     <div>
       <div id="graph">
-          <Bar data={uncachedBar} 
-            options={options}/>
+          <Bar data={uncachedBar} options={options}/>
         <button>test button</button>
       </div>
     </div>
