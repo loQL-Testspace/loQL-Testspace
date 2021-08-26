@@ -5,22 +5,38 @@ import { query1, query3, query4 } from "../queries";
 import "./Demo.scss";
 import ReactJson from 'react-json-view'
 
-register({ cacheExpirationLimit: 2000, cacheMethod: "cache-network" }); // sw.js
+const cacheTime = 5000;
+register({ cacheExpirationLimit: cacheTime, cacheMethod: "cache-network" }); // sw.js
 
 const Demo = () => {
-  const [lastQueryData, setLastQueryData] = useState({});
+  const [lastQueryData, setLastQueryData] = useState({ lastApiCall: true }); 
   const [metrics, setMetrics] = useState({});
+  const [secondsRemaining, setSecondsRemaining] = useState(cacheTime / 1000);
 
   // Perform initial query at load on page.
   useEffect(() => {
     performGQLQuery("/api/graphql", query1);
-  }, [])
+  }, [query1]);
+
+  const [time, setTime] = useState(Date.now());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsRemaining(counter => counter - 1 > 0 ? counter - 1 : 0)
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
 
   // Performs either GQL Get or POST request.
   const performGQLQuery = (...args) => {
     fetch(...args)
       .then((r) => r.json())
-      .then(data => setStateFromData({ data }))
+      .then(data => {
+        setStateFromData({ data })
+        if(data.lastApiCall) setSecondsRemaining(cacheTime / 1000)
+      });
   };
 
   // Sets state, metrics then passed into ChartJS for display
@@ -40,8 +56,15 @@ const Demo = () => {
         <button className={"queries"} onClick={() => performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query4)}>Nested Pokemon Query </button>
         <button className={"mutations"} onClick={() => performGQLQuery('/api/graphql', mutation1)}>Add Human Mutation </button>
       </div>
-      <p>{lastQueryData.lastApiCall ? "Fetched from cache." : "Fetched from API."}</p>
-      <ReactJson src={lastQueryData} enableClipboard={false} collapsed={3} displayDataTypes={false}/>
+      <div className={"metrics"}>
+        <h2>Metrics</h2>
+        <h3>Metrics Go Here</h3>
+      </div>
+      <div className={"data"}>
+        <h2>Data</h2>
+        <p>{lastQueryData.lastApiCall ? `This query was fetched from cache. ${secondsRemaining ? `The cache will expire in ${secondsRemaining} seconds...` : "Cache expired!"}` : "This query was fetched from the server. The data in the cache did not exist, or was stale."}</p>
+        <ReactJson src={lastQueryData} enableClipboard={false} collapsed={3} displayDataTypes={false}/>
+      </div>
     </div>
   )
 };
