@@ -23,6 +23,10 @@
   margin-bottom: 1em;
 }
 
+h2{
+  color: variables.$theme-color-light-black;  
+}
+
 pre.__json-pretty__ {
   padding: 1em;
 }
