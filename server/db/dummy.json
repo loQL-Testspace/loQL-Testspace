@@ -2,7 +2,7 @@
   "human": [
     {
       "id": "1",
-      "name": "loQL",
+      "name": "Ash Ketchum",
       "pets": [
         "jBWMVGjm50l5LGwepDoty1",
         "jBWMVGjm50l5LGwepDoty12"
@@ -10,21 +10,11 @@
     },
     {
       "id": "2",
-      "name": "loQL2"
-    },
-    {
-      "id": "3",
-      "name": "ioQL3"
-    },
-    {
-      "id": "vpqKTNUO4r1RSl4jwCTt3",
-      "createdAt": 1629228820053,
-      "name": "lolcat"
-    },
-    {
-      "id": "u3vngfOuiM5iGLjzR1gQM",
-      "createdAt": 1629229190610,
-      "name": "lolcat"
+      "name": "Misty Kasumi",
+      "pets": [
+        "jBWMVGjm50l5LGwepDoty1",
+        "jBWMVGjm50l5LGwepDoty12"
+      ]
     }
   ],
   "pet": [
@@ -34,7 +24,9 @@
       "type": "Terrier",
       "owner": "1",
       "createdAt": 1629458820053,
-      "toys": ["24"]
+      "toys": [
+        "24"
+      ]
     },
     {
       "id": "jBWMVGjm50l5LGwepDoty12",

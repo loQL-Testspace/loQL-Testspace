@@ -10,8 +10,6 @@ const Graph = ({ metricData }) => {
   // Comes from the summary function.
   const { uncachedAverageTime, cachedAverageTime, percent, totalTimeSaved, totalQueryCalls, individualUncachedSpeeds, individualCachedSpeeds } = metricData;
 
-
-
   const longer = individualCachedSpeeds.length > individualUncachedSpeeds.length ? individualCachedSpeeds : individualUncachedSpeeds;
   let avgUncached = longer
   let avgCached = longer
