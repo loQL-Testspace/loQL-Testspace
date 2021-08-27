@@ -9,11 +9,33 @@ export const query1 = {
             query GetHumanQuery($id: String!) {
                 human(input: {id: $id }) {
                   id
+                  name
                 }
               }
             `,
       variables: {
         id: '1',
+      },
+    }),
+  };
+
+export const query2 = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query: `
+            query GetHumanQuery($id: String!) {
+                human(input: {id: $id }) {
+                  id
+                  name
+                }
+              }
+            `,
+      variables: {
+        id: '2',
       },
     }),
   };
