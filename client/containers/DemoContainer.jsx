@@ -30,7 +30,7 @@ const Demo = () => {
     <div className="demo-content">
       <div className="button-list">
         <button className={"queries"} onClick={() => performGQLQuery('/api/graphql', query1)}>Get Trainer</button>
-        <button className={"queries"} onClick={() => performGQLQuery('/api/graphql', query2)}>Get Trainer #2</button>
+        <button className={"queries"} onClick={() => performGQLQuery('http://localhost:8080/api/graphql?query=query{human(input:{id:"2"}){name}}')} >Get Human Query </button>
         <button className={"queries"} onClick={() => performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query3)}>Simple Pokemon Query </button>
         <button className={"queries"} onClick={() => performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query4)}>Nested Pokemon Query </button>
       </div>

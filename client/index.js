@@ -7,7 +7,7 @@ import { register } from 'loql';
 import "./global.scss";
 
 const cacheTime = 10000000;
-register({ cacheExpirationLimit: cacheTime, cacheMethod: "cache-first" }); // sw.js
+register({ gqlEndpoints: ['http://localhost:8080/api/graphql', 'https://beta.pokeapi.co/graphql/v1beta'], cacheExpirationLimit: 20000, cacheMethod: "cache-network" }); // sw.js
 
 render(
   <BrowserRouter>
