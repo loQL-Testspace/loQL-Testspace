@@ -69,7 +69,7 @@ pre.__json-pretty__ {
   font-size: 25px;
   padding:10px 30px;
 
-    background: variables.$theme-color; 
+    background: #aaaaaa; 
     border-radius: 3px;
     border: none;
     padding: 0.5em 0.85em;
@@ -78,22 +78,11 @@ pre.__json-pretty__ {
       filter: brightness(108%);
       cursor: pointer;
     }
-  
-
-
 }
 
-.time-savings{
-  text-align: center;
-}
-
-.query-stat{
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.query-stat-text{
-  font-size:14px;
+.query-chart{
+  // background-color: greenyellow;
+  width: 100%;
 }
 
 .returned-data-title{
@@ -123,6 +112,7 @@ pre.__json-pretty__ {
 
 .icon-rollover{
   font-size: 15px;
+  color: #707070;
 }
 
 .rollover1{

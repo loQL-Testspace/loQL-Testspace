@@ -1,0 +1,51 @@
+@use '../variables';
+
+.chart-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0px 20px;
+}
+
+.charts{
+    border-left:1px solid #9b9b9b;
+    padding: 0px 19px;
+    font-size: 15px;
+}
+
+.cache-title{
+    margin-top:5px;
+}
+
+.bar-container{
+    display: flex;
+    align-items: center;
+}
+
+.bar1{
+    width:300px;
+    height:20px;
+    margin: 2px 5px 5px 0px;
+    background-color: rgb(197, 100, 100);
+}
+
+.bar2{
+    width:20px;
+    height:20px;
+    margin: 2px 5px 0px 0px;
+    background-color: rgb(113, 165, 130);
+}
+
+.time-savings{
+    text-align: center;
+  }
+  
+  .query-stat{
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .query-stat-text{
+    font-size:14px;
+  }
+  

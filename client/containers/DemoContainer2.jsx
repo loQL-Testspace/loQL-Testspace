@@ -3,6 +3,8 @@ import { register } from 'loql';
 import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js'
 import { query1, query3, query4 } from "../queries";
 import Graph from "../components/Graph2.jsx"
+import GraphShell from "../components/Graph-shell.jsx"
+
 import "./Demo.scss";
 import ReactJson from 'react-json-view'
 
@@ -80,14 +82,11 @@ const Demo = () => {
       </div>
       <div className={"query-chart"}>
 
-      <Graph  displayTitle='true' legendPosition='right' metricData={metrics}/>
+      <GraphShell />
 
       
       </div>
-      <div className={"time-savings"}>
-        <div className={"query-stat"}>60%</div>
-        <div className={"query-stat-text"}>time savings</div>
-      </div>
+
     </div>
 
     <div className={"returned-data"}>
@@ -98,6 +97,11 @@ const Demo = () => {
     </div>
 </div>
 <hr />
+
+<div className={"demo-container"}>
+<Graph  displayTitle='true' legendPosition='right' metricData={metrics}/>
+</div>
+
     </>
   )
 };
