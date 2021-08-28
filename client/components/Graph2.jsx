@@ -7,18 +7,12 @@ import { Bar, Line } from 'react-chartjs-2'
 
 const Graph = ({metricData}) => {
   
-
     //hardcode data here
     const uncachedSpeed = 1200;
     const cachedSpeed = 200;
     
     //calculate time saving, in this example it's 83%
     const timeSaving = Math.round((uncachedSpeed - cachedSpeed) / uncachedSpeed * 100);
-
-
-
-
-
 
 
   console.log('metricData in graph.jsx =', metricData);
