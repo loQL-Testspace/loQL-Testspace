@@ -30,3 +30,142 @@ h2{
 pre.__json-pretty__ {
   padding: 1em;
 }
+
+
+
+// CSS for DemoContainer2
+
+// hr {
+//   max-width: 675px;
+// }
+
+.demo-container{
+  max-width: 700px;
+  margin:auto;
+  padding:5px 0px 15px 0px;
+}
+
+.demo-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:15px;
+  // border: 1px dotted rgb(201, 201, 201);
+}
+
+.query-top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom:10px;
+}
+
+.query-title{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.query-button{
+  font-size: 25px;
+  padding:10px 30px;
+
+    background: variables.$theme-color; 
+    border-radius: 3px;
+    border: none;
+    padding: 0.5em 0.85em;
+
+    &:hover {
+      filter: brightness(108%);
+      cursor: pointer;
+    }
+  
+
+
+}
+
+.time-savings{
+  text-align: center;
+}
+
+.query-stat{
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.query-stat-text{
+  font-size:14px;
+}
+
+.returned-data-title{
+  font-size: 15px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.returned-data{
+  margin:15px;
+  // border: 1px dotted rgb(201, 201, 201);
+}
+
+.data{
+  height:100px;
+  padding:10px 10px;
+  border:1px solid black;
+  background: #efefef;
+  overflow:auto;    
+}
+
+.react-json-view{
+  background-color: #efefef !important;
+}
+
+/* Tooltip rollover CSS */
+
+.icon-rollover{
+  font-size: 15px;
+}
+
+.rollover1{
+  position: relative;
+}
+
+.rollover1::before,
+.rollover1::after
+{
+  --scale: 0;
+  --tooltip-color: #333333;
+  --arrow-size: 10px;
+
+  position: absolute;
+  top: -.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+transition: 100ms transform;
+transform-origin: bottom center;
+}
+
+.rollover1::before{
+  --translate-y: calc(-100% - var(--arrow-size));
+  content: attr(data-tooltip);
+  color:white;
+  padding: .7rem;
+  border-radius: .3rem;
+  width: max-content;
+  max-width: 200px;
+  font-size:12px;
+  background: var(--tooltip-color);
+}
+
+.rollover1:hover::before,
+.rollover1:hover::after{
+--scale: 1;
+}
+
+.rollover1::after{
+  --translate-y: calc(-1 * var(--arrow-size));
+
+  content:'';
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}

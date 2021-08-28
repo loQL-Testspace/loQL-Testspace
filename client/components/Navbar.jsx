@@ -4,7 +4,7 @@ import './Navbar.scss';
 
 const NavBar = () => {
   return (
-    <div className="navBar">
+    <div className="navBar" align="center">
       <div class="navLeft"><Link to="/">LOQL</Link></div>
 
       <div className="navRight">
