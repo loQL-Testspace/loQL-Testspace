@@ -98,9 +98,6 @@ const Demo = () => {
 </div>
 <hr />
 
-<div className={"demo-container"}>
-<Graph  displayTitle='true' legendPosition='right' metricData={metrics}/>
-</div>
 
     </>
   )

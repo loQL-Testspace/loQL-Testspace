@@ -22,6 +22,12 @@
     align-items: center;
 }
 
+.bar{
+    border: 1px black solid;
+    height: 20px;
+    width: 300px;
+}
+
 .bar1{
     width:300px;
     height:20px;
@@ -49,3 +55,15 @@
     font-size:14px;
   }
   
+
+
+
+@media screen and ( max-width: 800px ) {
+
+    .bar{
+        height: 20px;
+        width: 150px;
+    } 
+}
+
+ 
