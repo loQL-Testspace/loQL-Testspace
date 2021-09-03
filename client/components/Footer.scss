@@ -1,0 +1,19 @@
+@use '../variables';
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 1em 2em;
+  background-color: #d64292;
+  color: white;
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}

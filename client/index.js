@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import App from './app.jsx';
 import { register } from 'loql';
 
+//Bootstrap CSS needed for styling React Bootstrap components
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./global.scss";
 
 const cacheTime = 10000000;
