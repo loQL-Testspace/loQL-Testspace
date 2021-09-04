@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Roboto";
+  font-family: 'Roboto';
+  background: #f8f9fa;
+  // background: #14171a;
+  // color: #fafafa; // variables.$theme-color-light-black;
 }
 
 button {
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 
 .content-wrapper {
