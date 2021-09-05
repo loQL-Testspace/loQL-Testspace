@@ -23,7 +23,7 @@ const Demo = () => {
         break;
     }
 
-    const response = await fetch(URL, query1);
+    const response = await fetch(URL, query);
     const data = await response.json();
     setStateFromData({ data });
   };
