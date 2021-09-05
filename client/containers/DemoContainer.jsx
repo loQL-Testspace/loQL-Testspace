@@ -12,24 +12,25 @@ const Demo = () => {
 
   // Performs fetch to backend, which proxies the request to the R+M API.
   // We are sending post requests so they will get picked up by the express backend.
-  const getDataFromAPI = (queryNumber) => {
-    fetch(URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({ queryNumber }),
-    }).then(async (r) => {
-      const data = await r.json();
-      setStateFromData({ data });
-    });
+  const getDataFromAPI = async (queryNumber) => {
+    let query;
+    switch (queryNumber) {
+      case 1:
+        query = query1;
+        break;
+      case 2:
+        query = query2;
+        break;
+    }
+
+    const response = await fetch(URL, query1);
+    const data = await response.json();
+    setStateFromData({ data });
   };
 
-  // Sets state, metrics then passed into ChartJS for display
-  // Data is passed into ReactJSON for display.
+  // Sets state, metrics then passed into ChartJS for display Data is passed into ReactJSON for display.
   async function setStateFromData({ data }) {
-    const metrics = await summary();
+    const metrics = await summary(false);
     setMetrics(metrics);
     setLastQueryData(data);
   }
@@ -64,4 +65,5 @@ const Demo = () => {
 };
 
 export default Demo;
+
 // <button className={"queries"} onClick={() => performGQLQuery('http://localhost:4000/graphql?query=query{human(input:{id:"2"}){name}}')} >Get Trainer #2</button>

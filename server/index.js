@@ -2,7 +2,6 @@ import express from 'express';
 import fetch from 'node-fetch';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { query1, query2 } from './queries.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,15 +12,23 @@ app.use(express.json());
 const PORT = 3000;
 const API = 'https://rickandmortyapi.com/graphql';
 
-const performGQLQuery = async (query) => {
+const performGQLQuery = async (body) => {
+  const query = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(body),
+  };
   const result = await fetch(API, query);
   const parsed = await result.json();
   return parsed;
 };
 
 app.post('/api/graphql', async (req, res) => {
-  const { queryNumber } = req.body;
-  const GQLResult = await performGQLQuery(query1);
+  const body = req.body;
+  const GQLResult = await performGQLQuery(body);
   res.status(200).send(GQLResult);
 });
 
