@@ -5,15 +5,24 @@ import Graph from '../components/Graph.jsx';
 import './Demo.scss';
 import ReactJson from 'react-json-view';
 
+const URL = 'http://localhost:3000/api/graphql';
 const Demo = () => {
   const [lastQueryData, setLastQueryData] = useState(null);
   const [metrics, setMetrics] = useState(null);
 
-  // Performs either GQL Get or POST request.
-  const performGQLQuery = (...args) => {
-    fetch(...args).then(async (r) => {
-      const cool = await r.json();
-      setStateFromData({ data: cool });
+  // Performs fetch to backend, which proxies the request to the R+M API.
+  // We are sending post requests so they will get picked up by the express backend.
+  const getDataFromAPI = (queryNumber) => {
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ queryNumber }),
+    }).then(async (r) => {
+      const data = await r.json();
+      setStateFromData({ data });
     });
   };
 
@@ -28,48 +37,16 @@ const Demo = () => {
   return (
     <div className="demo-content">
       <div className="button-list">
-        <button
-          className={'queries'}
-          onClick={() => performGQLQuery('/api/graphql', query1)}
-        >
-          Get Trainer
+        <button className={'queries'} onClick={() => getDataFromAPI(1)}>
+          Get Homeworld
         </button>
-        <button
-          className={'queries'}
-          onClick={() =>
-            performGQLQuery(
-              'http://localhost:8080/api/graphql?query=query{human(input:{id:"2"}){name}}'
-            )
-          }
-        >
-          Get Human Query{' '}
-        </button>
-        <button
-          className={'queries'}
-          onClick={() =>
-            performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query3)
-          }
-        >
-          Simple Pokemon Query{' '}
-        </button>
-        <button
-          className={'queries'}
-          onClick={() =>
-            performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query4)
-          }
-        >
-          Nested Pokemon Query{' '}
+        <button className={'queries'} onClick={() => getDataFromAPI(2)}>
+          Get Characters
         </button>
       </div>
       <div className={'metrics'}>
         <h2>Metrics</h2>
-        {metrics && (
-          <Graph
-            displayTitle="true"
-            legendPosition="right"
-            metricData={metrics}
-          />
-        )}
+        {metrics && <Graph displayTitle="true" legendPosition="right" metricData={metrics} />}
       </div>
       <div className={'data'}>
         <h2>Data</h2>
