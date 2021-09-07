@@ -8,7 +8,7 @@ export default {
   entry: {
     index: './client/index.js',
     bundle: './client/app.jsx',
-    sw: './node_modules/@harrisoncramer/loql/sw.js',
+    loQL: './node_modules/@harrisoncramer/loql/loQL.js',
   },
   devtool: 'eval-source-map',
   output: {
@@ -28,7 +28,6 @@ export default {
         },
       },
       {
-        //Andrew: Not sure how to load in css files but trying this way since it seems the former version only processed scss files...
         test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
@@ -64,13 +63,11 @@ export default {
     proxy: {
       '/api/**': {
         target: 'http://localhost:3000/',
-        // secure: false,
         logLevel: 'debug',
       },
     },
   },
   resolve: {
-    // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
   },
 };
