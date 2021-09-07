@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.scss';
 
 register({
-  gqlEndpoints: ['http://localhost:8080/api/graphql'],
+  gqlEndpoints: [process.env.ENDPOINT],
   cacheExpirationLimit: 20000,
   cacheMethod: 'cache-network',
 });

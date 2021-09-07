@@ -2,6 +2,7 @@ import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-when-using-the-experimental-modules-flag
 
 export default {
@@ -50,6 +51,9 @@ export default {
     ],
   },
   plugins: [
+    new Dotenv({
+      path: path.resolve(__dirname, `./.${process.env.NODE_ENV}.env`),
+    }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
     }),

@@ -4,7 +4,7 @@ import Graph from '../components/Graph.jsx';
 import './Demo.scss';
 import ReactJson from 'react-json-view';
 
-const URL = 'http://localhost:8080/api/graphql';
+const URL = process.env.ENDPOINT;
 const Demo = () => {
   const [lastQueryData, setLastQueryData] = useState(null);
   const [metrics, setMetrics] = useState(null);
