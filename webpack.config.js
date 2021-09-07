@@ -8,7 +8,7 @@ export default {
   entry: {
     index: './client/index.js',
     bundle: './client/app.jsx',
-    sw: './node_modules/loql/sw.js',
+    sw: './node_modules/@harrisoncramer/loql/sw.js',
   },
   devtool: 'eval-source-map',
   output: {
@@ -35,7 +35,7 @@ export default {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -58,9 +58,12 @@ export default {
   devServer: {
     contentBase: './client',
     historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     proxy: {
       '/api/**': {
-        target: 'http://localhost:4000/',
+        target: 'http://localhost:3000/',
         // secure: false,
         logLevel: 'debug',
       },

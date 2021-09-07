@@ -9,7 +9,7 @@
     "start": "nodemon apollo-server/server.js",
     "start:client": "NODE_ENV=development webpack serve --open",
     "build:client": "NODE_ENV=production webpack",
-    "start:express": "PORT=3000 nodemon server/index.js"
+    "start:express": "PORT=3000 node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jae-ryu/Test-Enviorment#readme",
   "dependencies": {
+    "@harrisoncramer/loql": "^1.0.0",
     "apollo-server": "^3.1.2",
     "bootstrap": "^5.1.0",
     "chart.js": "^3.5.1",
