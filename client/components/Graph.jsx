@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { register } from 'loql-cache';
 import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { Bar, Line } from 'react-chartjs-2';
+import "chartjs-plugin-datalabels";
 
 const Graph = ({ metricData }) => {
   // Comes from the summary function.
@@ -10,96 +11,64 @@ const Graph = ({ metricData }) => {
     uncachedSpeeds
   } = metricData;
 
-  const avgCachedSpeeds = cachedSpeeds.reduce((a,b) => a+b) / cachedSpeeds.length;
+  const avgCachedSpeed = cachedSpeeds.reduce((a,b) => a+b) / cachedSpeeds.length;
+  const avgUncachedSpeed = uncachedSpeeds.reduce((a,b) => a+b) / uncachedSpeeds.length;
 
-  const longer =
-    cachedSpeeds.length > uncachedSpeeds.length
-      ? cachedSpeeds
-      : uncachedSpeeds;
-  let avgUncached = longer;
-  let avgCached = longer;
-
-  // avgUncached = avgUncached.map((e) => uncachedAverageTime);
-  // avgCached = avgCached.map((e) => cachedAverageTime);
+  const timeSaving = Math.round((1 - (avgCachedSpeed / avgUncachedSpeed)) * 100)
 
   const uncachedBar = {
     chartData: {
-      labels: longer.map((_, i) => `${i}`),
+      labels: ['Uncached Speed', 'Cached Speed'],
       datasets: [
         {
           type: 'bar',
-          label: 'Uncached Speeds (ms)',
-          data: uncachedSpeeds,
-        },
-        {
-          type: 'bar',
-          label: 'Cached Speeds (ms)',
-          data: cachedSpeeds,
-          backgroundColor: 'rgba(75, 192, 192, 1)',
-        },
-        // {
-        //   type: 'line',
-        //   label: 'Average Uncached Speeds (ms)',
-        //   data: avgUncached,
-        // },
-        // {
-        //   type: 'line',
-        //   label: 'Average Cached Speeds (ms)',
-        //   data: avgCached,
-        //   backgroundColor: 'rgba(75, 192, 192, 1)',
-        // },
+          label: ['Uncached Speeds (ms)', 'Cached Speeds (ms)'],
+          data: [avgUncachedSpeed, avgCachedSpeed],
+          backgroundColor: ['rgba(171, 183, 183, 1)', 'rgba(75, 192, 192, 1)']
+        }
       ],
     },
   };
-
   const barOptions = {
-    title: {
-      display: true,
-      text: 'Time to retrieve from server vs. cache',
-      fontSize: 25,
+    plugins: {
+      datalabels: {
+        display: true,
+        color: 'black',
+        align: 'end',
+        anchor: 'end',
+        font: { size: '14' }
+      }
     },
+    legend: {
+      labels: {
+          fontSize: 0
+      }
+    },
+    responsive: true,
     maintainAspectRatio: true,
-    legend: { display: true, position: 'right' },
-  };
-
-  const uncachedBar2 = {
-    chartData: {
-      labels: [
-        'Get Trainer Query',
-        'Get Trainer 2',
-        'Simple Pokemon Query',
-        'Nested Pokemon Query',
-      ],
-      datasets: [
-        {
-          label: 'Uncached Speeds',
-          data: uncachedSpeeds,
-        },
-        {
-          label: 'Cached Speeds',
-          data: cachedSpeeds,
-          backgroundColor: 'rgba(75, 192, 192, 1)',
-        },
-      ],
+    indexAxis: 'y',
+    scales: {
+      x: {
+        // gridLines: { display: false},
+        display: false,
+      },
     },
-  };
-
-  const barOptions2 = {
-    title: {
-      display: true,
-      text: 'Time to retrieve from server vs. cache',
-      fontSize: 25,
-    },
-    maintainAspectRatio: true,
-    legend: { display: true, position: 'right' },
   };
 
   return (
-    <div>
-      <div id="speedBar">
+    <div className="speedBar">
+      <div className="graph">
         <Bar data={uncachedBar.chartData} options={barOptions} />
         {/* <Bar data={uncachedBar2.chartData} options={barOptions2} /> */}
       </div>
+      {avgCachedSpeed && 
+        <div className="savings">
+          <div id="metrics"> 
+            <h4>{timeSaving}%</h4> 
+            <h4>time savings</h4>
+          </div>
+        </div>
+      }
     </div>
   );
 };

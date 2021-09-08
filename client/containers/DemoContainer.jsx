@@ -91,14 +91,19 @@ const Demo = () => {
   return (
     <div className="demo-content">
       
-      <div className="query1">
-        <button className={'queries'} onClick={() => getDataFromAPI(1)}>
-          Get Homeworld
-        </button>
-        <h2>Metrics</h2>
-        {query1Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query1Metrics} />}
+      <div className="query">
+        <div className='tophalf'>
+          <div className="button-list">
+            <button className={'queries'} onClick={() => getDataFromAPI(1)}>
+              Get Homeworld
+            </button>
+          </div>
+          <div className="queryMetric">
+            {query1Metrics && <Graph metricData={query1Metrics} />}
+          </div>
+        </div>
         <div className="queryData">
-          <h2>Data</h2>
+          <h3>Returned Data</h3>
           {query1Data && (
             <ReactJson
               src={query1Data}
@@ -110,14 +115,17 @@ const Demo = () => {
         </div>
       </div>
 
-      <div className="query2">
-        <button className={'queries'} onClick={() => getDataFromAPI(2)}>
-          Get Characters
-        </button>
-        <h2>Metrics</h2>
-        {query2Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query2Metrics} />}
+      <div className="query">
+        <div className="button-list">
+          <button className='queries' onClick={() => getDataFromAPI(2)}>
+            Get Characters
+          </button>
+        </div>
+        <div className="queryMetric">
+          {query2Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query2Metrics} />}
+        </div>
         <div className="queryData">
-          <h2>Data</h2>
+          <h3>Returned Data</h3>
           {query2Data && (
             <ReactJson
               src={query2Data}
@@ -129,14 +137,17 @@ const Demo = () => {
         </div>
       </div>
 
-      <div className="query3">
-        <button className={'queries'} onClick={() => getDataFromAPI(3)}>
-          Get Episodes
-        </button>
-        <h2>Metrics</h2>
-        {query3Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query3Metrics} />}
+      <div className="query">
+        <div className="button-list">
+          <button className={'queries'} onClick={() => getDataFromAPI(3)}>
+            Get Episodes
+          </button>
+        </div>
+        <div className="queryMetric">
+          {query3Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query3Metrics} />}
+        </div>
         <div className="queryData">
-          <h2>Data</h2>
+          <h3>Returned Data</h3>
           {query3Data && (
             <ReactJson
               src={query3Data}
@@ -148,14 +159,17 @@ const Demo = () => {
         </div>
       </div>
 
-      <div className="query4">
-        <button className={'queries'} onClick={() => getDataFromAPI(4)}>
-          Get Location by ID
-        </button>
-        <h2>Metrics</h2>
-        {query4Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query4Metrics} />}
+      <div className="query">
+        <div className="button-list">
+          <button className={'queries'} onClick={() => getDataFromAPI(4)}>
+            Get Location by ID
+          </button>
+        </div>
+        <div className="queryMetric">
+          {query4Metrics && <Graph metricData={query4Metrics} />}
+        </div>
         <div className="queryData">
-          <h2>Data</h2>
+          <h3>Returned Data</h3>
           {query4Data && (
             <ReactJson
               src={query4Data}
