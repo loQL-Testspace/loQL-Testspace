@@ -90,6 +90,21 @@ export const query4 = {
     }),
   };
 
+  export const query5 = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query: `
+        query getIntrospectionQuery()
+      `,
+    }),
+  };
+
+
+
 export const mutation1 = {
     method: 'POST',
     headers: {

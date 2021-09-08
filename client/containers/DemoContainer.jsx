@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js'
-import { query1, query2, query3, query4 } from "../queries";
+import { query1, query2, query3, query4, query5 } from "../queries";
 import Graph from "../components/Graph.jsx"
 import "./Demo.scss";
 import ReactJson from 'react-json-view'
@@ -33,6 +33,8 @@ const Demo = () => {
         <button className={"queries"} onClick={() => performGQLQuery('http://localhost:8080/api/graphql?query=query{human(input:{id:"2"}){name}}')} >Get Human Query </button>
         <button className={"queries"} onClick={() => performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query3)}>Simple Pokemon Query </button>
         <button className={"queries"} onClick={() => performGQLQuery('https://beta.pokeapi.co/graphql/v1beta', query4)}>Nested Pokemon Query </button>
+        <button className={"queries"} onClick={() => performGQLQuery('/api/graphql', query5)}>Introspection Query</button>
+
       </div>
       <div className={"metrics"}>
         <h2>Metrics</h2>
