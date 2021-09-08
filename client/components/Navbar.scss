@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.color {
+  background-color: #f74219 !important;
+}
+
 .navigation-link {
   padding-left: 10px;
   text-decoration: none !important;
@@ -33,7 +37,7 @@
   color: #fafafa; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-hover;
+    color: variables.$theme-color-hover!important;
   }
 }
 
