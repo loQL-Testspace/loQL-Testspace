@@ -11,7 +11,7 @@
 }
 
 .navigation-link {
-  padding-left: 10px;
+  padding-left: 13px;
   text-decoration: none;
   font-size: 20px;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -28,18 +28,23 @@
 .logo-title {
   padding-left: 10px;
   text-decoration: none;
-  font-size: 30px;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: bold;
-  color: #fafafa; // variables.$theme-color-light-black;
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  color: variables.$theme-color-light-white;
+
+  &:hover {
+    color: variables.$theme-color-light-white;
+  }
+}
+
+.external a,
+.external i{
+  font-size: 28px;
+  color: variables.$theme-color-light-white;
 
   &:hover {
     color: variables.$theme-color-hover;
   }
-}
-
-.external {
-  font-size: 25px;
 }
 
 

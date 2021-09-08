@@ -16,7 +16,7 @@ const NavigationBar = () => {
             width="30"
             height="30"
             className="d-inline-block align-top"
-            alt="React Bootstrap logo"
+            alt="loQL logo"
           />
           <Link className="logo-title" to="/">
             loQL
