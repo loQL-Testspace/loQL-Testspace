@@ -60,7 +60,7 @@ const SplashPage = () => {
 
 
 <Container>
-      <Row xs={1} md={2} className="g-4">
+      <Row xs={1} md={2} className="g-3 feature-box">
     <Col>
       <Card>
         <Card.Body>
