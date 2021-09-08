@@ -7,7 +7,7 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <Navbar bg="light" expand="sm" >
+    <Navbar bg="light" expand="sm" id="foot-margin">
       <Container>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
