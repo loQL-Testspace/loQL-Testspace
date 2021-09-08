@@ -31,7 +31,7 @@ const SplashPage = () => {
           <div className="button2"><a href="#" className="button-link2">Try demo</a></div>
         </div>
 
-          <div>Currently <strong>v1.0.0</strong> · <a href="#" className="small-link">v4.6.x docs</a> · <a href="#">All releases</a></div>
+          <div>Currently <strong>v1.0.0</strong> · <a href="#" className="gray-link">v4.6.x docs</a> · <a href="#" className="gray-link">All releases</a></div>
        
 
 

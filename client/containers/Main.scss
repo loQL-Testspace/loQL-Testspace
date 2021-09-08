@@ -4,9 +4,7 @@
   width: 100%;
   display: flex;
   gap: 1em;
-  justify-content: space-between;
-
- 
+  justify-content: space-between; 
 }
 
 .big-liner{
@@ -36,10 +34,10 @@
 
 .button1 a:hover,
 .button1 a:active {
-    color: variables.$theme-color-subtext-grey;
     transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
-  background-color: variables.$theme-color-hover;
+  border: 1px solid variables.$theme-color-complementary;
+  background-color: variables.$theme-color-complementary;
 
 }
 
@@ -49,17 +47,18 @@
   text-decoration: none;
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid variables.$theme-color-main;
+  border: 1px solid variables.$theme-color-warm-gray;
   font-size: 20px;
   font-weight: bold;
-  color: variables.$theme-color-main;
+  color: variables.$theme-color-light-black;
+  background-color: variables.$theme-color-light-white;
 }
 
 .button2 a:hover, 
 .button2 a:active {
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
-  background-color: #212529;
+  background-color: variables.$theme-color-warm-gray;
   box-shadow: 0 0 1px #757575;
   color: white;
 }
@@ -100,7 +99,12 @@
 }
 
 
-
+.gray-link{
+  color: variables.$theme-color-light-black;
+  &:hover {
+    color: variables.$theme-color-light-black;
+  }
+}
 
 
 @media all and (min-width: 300px) {

@@ -11,13 +11,13 @@ const NavigationBar = () => {
     <Navbar expand="sm" className="navbar navbar-top">
       <Container>
         <Navbar.Brand className="navbar-brand">
-          <img
+          {/* <img
             src={logoUrl}
             width="30"
             height="30"
             className="d-inline-block align-top"
             alt="loQL logo"
-          />
+          /> */}
           <Link className="logo-title" to="/">
             loQL
           </Link>
