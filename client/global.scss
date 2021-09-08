@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 body {
   margin: 0px;
@@ -17,4 +18,8 @@ button {
 .content-wrapper {
   max-width: 960px;
   margin: 0 auto;
+}
+
+#root {
+  height: 100%;
 }
