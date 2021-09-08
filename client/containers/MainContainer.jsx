@@ -25,7 +25,8 @@ const SplashPage = () => {
               </div>
             </div>
             <div id="main-right">
-              <img src={splashImg} className="splash-img"></img>
+              {/* <img src={splashImg} className="splash-img"></img> */}
+              <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_g1mzbfkz.json"  background="transparent"  speed="1" loop autoplay className="bike-animation"></lottie-player>
             </div>
           </div>
 
