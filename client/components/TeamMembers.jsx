@@ -9,7 +9,7 @@ const TeamMembers = () => {
   {/*Add headshots and socials*/}
 
   return (
-    <div id="card-inner-container">
+    <div id="card-inner-container"> 
       <div className="card">
         <img />
         <div className="socials">

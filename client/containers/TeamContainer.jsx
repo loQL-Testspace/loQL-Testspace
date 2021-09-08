@@ -9,7 +9,7 @@ const Team = () => {
       <div id="team-summary">
         <div>
           <h1>
-            Meet the team behind LOQL
+            Meet the team behind LOQL 
           </h1>
           <p className="subtext">
             LOQL is developed and maintained by a group of full stack engineers 
