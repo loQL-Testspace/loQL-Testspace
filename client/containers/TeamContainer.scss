@@ -3,7 +3,6 @@
 #team-content {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
 
   .subtext {
     color: variables.$theme-color-subtext-grey;
@@ -11,6 +10,7 @@
 
   #team-container {
     margin-top: 10rem;
+    display: flex;
   }
 
   #team-summary {
@@ -19,7 +19,7 @@
 
   #team-cards{
     margin-top: 5rem;
-    width: 100%;
+    width: 100%; 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

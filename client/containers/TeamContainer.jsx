@@ -12,13 +12,13 @@ const Team = () => {
             Meet the team behind LOQL
           </h1>
           <p className="subtext">
-            LOQL is developed and maintained by a group of full stack engineers 
+            LOQL is developed and maintained by a group of full stack engineers
             that are passionate about learning new technologies and creating
             useful developer tools.
           </p>
         </div>
         <img /> {/*Some sort of logo image*/}
-        
+
       </div>
       <div id="team-container">
         <TeamMembers id="team-cards" />
@@ -26,5 +26,5 @@ const Team = () => {
     </div>
   )
 }
- 
+
 export default Team;

@@ -38,7 +38,7 @@ export default {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|jpeg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -59,7 +59,7 @@ export default {
     }),
   ],
   devServer: {
-    contentBase: './client',
+    static: './client',
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
