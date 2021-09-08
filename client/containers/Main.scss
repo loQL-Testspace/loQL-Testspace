@@ -1,10 +1,11 @@
 @use '../variables';
 
+
 .package-features {
   width: 100%;
   display: flex;
-  gap: 1em;
-  justify-content: space-between; 
+  gap: 2em;
+  flex-direction: wrap;
 }
 
 .big-liner{
@@ -82,11 +83,23 @@
   text-align: left;
 }
 
-
 .splash {
   display: flex;
-  flex-flow: wrap;
+  flex-flow: row wrap;
+  
+  #main-left {
+    width: 50%;
+  }
+
+  #main-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+  
 }
+
 
 .splash-img{
   height: 200px;
@@ -158,27 +171,29 @@
 
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 769px) {
 
-
-
+  .bigTitle {
+    font-size: 3em;
+    line-height: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .bigDescription {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
 
   .main {
     /* tell the main column to take up twice the space as the aside */
     flex: 2 0px;
     text-align: left;
-    padding: 3rem 0 3rem 0; 
+    padding: 0 0 3rem 0; 
 
   }
   .main {
     order: 1;
   }
-
-
-
-  
-
-
 
   .flex-buttons {
     flex-direction: row;
@@ -189,23 +204,49 @@
     padding-bottom: 10px;
 }
 
-.button-link1, .button-link2, .button-link3  {
+  .button-link1, .button-link2, .button-link3  {
     font-size: 20px;
     width: auto;
     padding: 15px 30px;
     margin-right:15px;
   }
 
+  
+
+}
+
+@media all and (max-width: 765px) {
+
   .bigTitle {
-    font-size: 3.6em;
+    font-size: 3em;
     line-height: 1em;
     font-weight: bold;
   }
 
   .bigDescription {
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.5em;
     padding-bottom: 1rem;
   }
 
+  .splash {
+    display: flex;
+    flex-flow: column wrap;
+    
+    #main-left {
+      width: 100%;
+    }
+  
+    #main-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  .package-features {
+    display: flex;
+    flex-direction: column;
+  }
 }
