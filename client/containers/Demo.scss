@@ -5,6 +5,7 @@
 }
 
 .button-list {
+  // Buttons...
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   gap: 0.5em;
@@ -17,7 +18,6 @@
     border: none;
     padding: 0.5em 0.85em;
     &:hover {
-      
       filter: brightness(108%);
       cursor: pointer;
     }
@@ -25,10 +25,56 @@
   margin-bottom: 1em;
 }
 
-h2{
-  color: variables.$theme-color-light-black;  
+.queryData {
+  display: flex;
+  /* padding: 0.5em;*/
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.query {
+  display: flex;
+  flex-direction: column;
+
+  .tophalf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .queryMetric {
+      width: 100%;
+    }
+  }
+}
+
+.graph {
+  width: 100%;
+}
+
+h2 {
+  color: variables.$theme-color-light-black;
 }
 
 pre.__json-pretty__ {
   padding: 1em;
 }
+
+.speedBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.savings {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h4 {
+    align-items: center;
+  }
+}
+

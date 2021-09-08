@@ -1,0 +1,22 @@
+@use '../variables';
+
+.bigTitle {
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+
+.main {
+  padding-top: 0px;
+  text-align: left;
+
+  a {
+    color: variables.$theme-color-complementary;
+    &:hover {
+      color: variables.$theme-color-hover;
+    }
+  }
+
+  section {
+    margin-bottom: 1em;
+  }
+}

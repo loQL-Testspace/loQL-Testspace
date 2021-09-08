@@ -24,10 +24,11 @@
   },
   "homepage": "https://github.com/jae-ryu/Test-Enviorment#readme",
   "dependencies": {
+    "chartjs-plugin-datalabels": "^2.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "loql-cache": "^1.0.2",
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.0.0",
+    "react-syntax-highlighter": "^15.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
