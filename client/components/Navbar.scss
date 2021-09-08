@@ -1,5 +1,9 @@
 @use '../variables';
 
+.navbar-top{
+  background-color: variables.$theme-color-main !important;
+}
+
 .navbar-brand {
   display: flex;
   flex-direction: row;
@@ -8,14 +12,15 @@
 
 .navigation-link {
   padding-left: 10px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 20px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: bold;
-  color: #fafafa; // variables.$theme-color-light-black;
+
+    color: #fafafa !important; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-chart-blue;
+    color: variables.$theme-color-hover !important;
   }
 }
 
@@ -28,25 +33,12 @@
   color: #fafafa; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-chart-blue;
+    color: variables.$theme-color-hover;
   }
 }
 
 .external {
-  font-size: 17px;
+  font-size: 25px;
 }
 
-// We don't need media screens with bootstrap anymore!
-// @media screen and (max-width: 800px) {
-//   .navBar {
-//     padding: 1em;
-//   }
-//   .navRight a {
-//     padding-left: 10px;
-//     font-size: 15px;
-//   }
-//   .external {
-//     font-size: 13px;
-//   }
-// }
 

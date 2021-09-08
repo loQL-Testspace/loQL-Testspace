@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="sm" className="navbar">
+    <Navbar bg="dark" variant="dark" expand="sm" className="navbar navbar-top">
       <Container>
         <Navbar.Brand className="navbar-brand">
           <img
@@ -37,10 +37,10 @@ const NavigationBar = () => {
           </Nav>
           <Nav>
             <Nav.Link className="external" href="https://github.com/oslabs-beta/loQL/">
-              Github
+               <i class="fab fa-github"></i>
             </Nav.Link>
-            <Nav.Link className="external" href="npm.com">
-              NPM
+            <Nav.Link className="external" href="https://www.npmjs.com/package/loql-cache">
+               <i class="fab fa-npm"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
