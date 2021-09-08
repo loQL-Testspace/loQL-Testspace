@@ -1,0 +1,34 @@
+@use '../variables';
+
+/*
+card - add borders to each card, maybe round ? && flex column each card
+socials - justify content
+*/
+
+#card-inner-container {
+  display: flex;
+
+  .card {
+    margin: 0px 10px;
+    display: flex;
+    width: 70%;
+    height: 20rem;
+    flex-flow: column wrap;
+    padding: 1rem;
+
+    .socials {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  
+      .fab {
+        color: #de5f43!important;
+      }
+    }
+    
+    .name  {
+      display: flex;
+      color: black!important;
+    }
+  }
+}
