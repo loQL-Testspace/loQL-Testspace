@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   gap: 0.5em;
+
   button {
     padding: 0.25em;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
@@ -16,6 +17,7 @@
     border: none;
     padding: 0.5em 0.85em;
     &:hover {
+      
       filter: brightness(108%);
       cursor: pointer;
     }

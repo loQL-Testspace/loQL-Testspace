@@ -11,6 +11,8 @@
 
   #team-container {
     margin-top: 10rem;
+    margin-bottom: 10rem;
+    display: flex;
   }
 
   #team-summary {
@@ -19,7 +21,7 @@
 
   #team-cards{
     margin-top: 5rem;
-    width: 100%;
+    width: 100%; 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
