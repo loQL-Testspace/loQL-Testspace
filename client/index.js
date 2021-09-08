@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.scss';
 
 register({
-  gqlEndpoints: [process.env.ENDPOINT],
+  gqlEndpoints: [process.env.ENDPOINT, 'https://rickandmortyapi.com/graphql'],
   cacheExpirationLimit: 20000,
   cacheMethod: 'cache-network',
 });

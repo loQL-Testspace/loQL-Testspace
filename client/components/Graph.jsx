@@ -29,6 +29,7 @@ const Graph = ({ metricData }) => {
       ],
     },
   };
+
   const barOptions = {
     plugins: {
       datalabels: {
@@ -45,7 +46,7 @@ const Graph = ({ metricData }) => {
       }
     },
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     indexAxis: 'y',
     scales: {
       x: {
@@ -59,13 +60,12 @@ const Graph = ({ metricData }) => {
     <div className="speedBar">
       <div className="graph">
         <Bar data={uncachedBar.chartData} options={barOptions} />
-        {/* <Bar data={uncachedBar2.chartData} options={barOptions2} /> */}
       </div>
       {avgCachedSpeed && 
         <div className="savings">
           <div id="metrics"> 
-            <h4>{timeSaving}%</h4> 
-            <h4>time savings</h4>
+            <h3>{timeSaving}%</h3> 
+            <h5>avg time savings</h5>
           </div>
         </div>
       }

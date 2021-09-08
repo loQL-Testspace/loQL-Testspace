@@ -8,8 +8,8 @@ import { get } from 'loql-cache/helpers/initializeIndexDb';
 
 const URL = process.env.ENDPOINT;
 const Demo = () => {
-  const [lastQueryData, setLastQueryData] = useState(null);
-  const [metrics, setMetrics] = useState(null);
+  // const [lastQueryData, setLastQueryData] = useState(null);
+  // const [metrics, setMetrics] = useState(null);
   const [query1Metrics, setQuery1Metrics] = useState(null);
   const [query2Metrics, setQuery2Metrics] = useState(null);
   const [query3Metrics, setQuery3Metrics] = useState(null);
@@ -52,11 +52,9 @@ const Demo = () => {
   
   // Sets state, metrics then passed into ChartJS for display Data is passed into ReactJSON for display.
   async function setStateFromData({ data }, queryNumber) {
-    const metrics = await summary(false);
-    setMetrics(metrics);
-    setLastQueryData(data);
-    // based on query number, get the hashedKey
-    // with the hashedKey, get the results from metrics cachedSpeeds & uncachedSpeeds
+    // const metrics = await summary(false);
+    // setMetrics(metrics);
+    // setLastQueryData(data);
     let hashedKey;
     let queryMetrics;
     switch (queryNumber) {
@@ -90,11 +88,12 @@ const Demo = () => {
 
   return (
     <div className="demo-content">
+      <h2></h2>
       
       <div className="query">
         <div className='tophalf'>
           <div className="button-list">
-            <button className={'queries'} onClick={() => getDataFromAPI(1)}>
+            <button className="queries" onClick={() => getDataFromAPI(1)}>
               Get Homeworld
             </button>
           </div>
@@ -103,135 +102,98 @@ const Demo = () => {
           </div>
         </div>
         <div className="queryData">
-          <h3>Returned Data</h3>
           {query1Data && (
-            <ReactJson
-              src={query1Data}
-              enableClipboard={false}
-              collapsed={3}
-              displayDataTypes={false}
-            />
+            <div>
+              <h5>Returned Data</h5>
+              <ReactJson
+                src={query1Data}
+                enableClipboard={false}
+                collapsed={3}
+                displayDataTypes={false}
+              />
+            </div> 
           )}
         </div>
       </div>
 
       <div className="query">
-        <div className="button-list">
-          <button className='queries' onClick={() => getDataFromAPI(2)}>
-            Get Characters
-          </button>
-        </div>
-        <div className="queryMetric">
-          {query2Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query2Metrics} />}
+        <div className='tophalf'>
+          <div className="button-list">
+            <button className="queries" onClick={() => getDataFromAPI(2)}>
+              Get Characters
+            </button>
+          </div>
+          <div className="queryMetric">
+            {query2Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query2Metrics} />}
+          </div>
         </div>
         <div className="queryData">
-          <h3>Returned Data</h3>
           {query2Data && (
-            <ReactJson
-              src={query2Data}
-              enableClipboard={false}
-              collapsed={3}
-              displayDataTypes={false}
-            />
+            <div>
+              <h5>Returned Data</h5>
+              <ReactJson
+                src={query2Data}
+                enableClipboard={false}
+                collapsed={3}
+                displayDataTypes={false}
+              />
+            </div>
           )}
         </div>
       </div>
 
       <div className="query">
-        <div className="button-list">
-          <button className={'queries'} onClick={() => getDataFromAPI(3)}>
-            Get Episodes
-          </button>
-        </div>
-        <div className="queryMetric">
-          {query3Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query3Metrics} />}
+        <div className='tophalf'>
+          <div className="button-list">
+            <button className="queries" onClick={() => getDataFromAPI(3)}>
+              Get Episodes
+            </button>
+          </div>
+          <div className="queryMetric">
+            {query3Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query3Metrics} />}
+          </div>
         </div>
         <div className="queryData">
-          <h3>Returned Data</h3>
           {query3Data && (
-            <ReactJson
-              src={query3Data}
-              enableClipboard={false}
-              collapsed={3}
-              displayDataTypes={false}
-            />
+            <div>
+              <h5>Returned Data</h5>
+              <ReactJson
+                src={query3Data}
+                enableClipboard={false}
+                collapsed={3}
+                displayDataTypes={false}
+              />
+            </div>
           )}
         </div>
       </div>
 
       <div className="query">
-        <div className="button-list">
-          <button className={'queries'} onClick={() => getDataFromAPI(4)}>
-            Get Location by ID
-          </button>
-        </div>
-        <div className="queryMetric">
-          {query4Metrics && <Graph metricData={query4Metrics} />}
+        <div className='tophalf'>
+          <div className="button-list">
+            <button className="queries" onClick={() => getDataFromAPI(4)}>
+              Get Location by ID
+            </button>
+          </div>
+          <div className="queryMetric">
+            {query4Metrics && <Graph metricData={query4Metrics} />}
+          </div>
         </div>
         <div className="queryData">
-          <h3>Returned Data</h3>
           {query4Data && (
-            <ReactJson
-              src={query4Data}
-              enableClipboard={false}
-              collapsed={3}
-              displayDataTypes={false}
-            />
+            <div>
+              <h5>Returned Data</h5>
+              <ReactJson
+                src={query4Data}
+                enableClipboard={false}
+                collapsed={3}
+                displayDataTypes={false}
+              />
+            </div>
           )}
         </div>
-      </div>
-
-     {/*  <div className="button-list">
-        <button className={'queries'} onClick={() => getDataFromAPI(2)}>
-          Get Characters
-        </button>
-        <button className={'queries'} onClick={() => getDataFromAPI(3)}>
-          Get Episodes
-        </button>
-        <button className={'queries'} onClick={() => getDataFromAPI(4)}>
-          Get Location by ID
-        </button>
-      </div> */}
-      <div className={'metrics'}>
-        {/* {query1Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query1Metrics} />} */}
-
-      </div>
-      <div className={'data'}>
       </div>
     </div>
-      //   <div className="demo-content">
-      //   <div className="button-list">
-      //     <button className={'queries'} onClick={() => getDataFromAPI(1)}>
-      //       Get Homeworld
-      //     </button>
-      //     <button className={'queries'} onClick={() => getDataFromAPI(2)}>
-      //       Get Characters
-      //     </button>
-      //     <button className={'queries'} onClick={() => getDataFromAPI(3)}>
-      //       Get Episodes
-      //     </button>
-      //     <button className={'queries'} onClick={() => getDataFromAPI(4)}>
-      //       Get Location by ID
-      //     </button>
-      //   </div>
-      //   <div className={'metrics'}>
-      //     <h2>Metrics</h2>
-      //     {metrics && <Graph displayTitle="true" legendPosition="right" metricData={metrics} />}
-      //     {/* {query1Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query1Metrics} />} */}
-  
-      //   </div>
-      //   <div className={'data'}>
-      //     <h2>Data</h2>
-      //     {lastQueryData && (
-      //       <ReactJson
-      //         src={lastQueryData}
-      //         enableClipboard={false}
-      //         collapsed={3}
-      //         displayDataTypes={false}
-      //       />
-      //     )}
-      //   </div>
-      // </div>
   );
 };
 
