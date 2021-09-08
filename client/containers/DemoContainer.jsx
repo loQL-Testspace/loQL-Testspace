@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql/Metrics.js';
+import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { query1, query2, query3, query4 } from '../queries';
 import Graph from '../components/Graph.jsx';
 import './Demo.scss';
 import ReactJson from 'react-json-view';
 
-const URL = 'http://localhost:3000/api/graphql';
+const URL = process.env.ENDPOINT;
 const Demo = () => {
   const [lastQueryData, setLastQueryData] = useState(null);
   const [metrics, setMetrics] = useState(null);
@@ -65,5 +65,3 @@ const Demo = () => {
 };
 
 export default Demo;
-
-// <button className={"queries"} onClick={() => performGQLQuery('http://localhost:4000/graphql?query=query{human(input:{id:"2"}){name}}')} >Get Trainer #2</button>
