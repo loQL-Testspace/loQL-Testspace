@@ -1,6 +1,22 @@
-import { register } from 'loql';
+import { BrowserRouter } from 'react-router-dom';
+import React from 'react';
+import { render } from 'react-dom';
+import App from './app.jsx';
+import { register } from 'loql-cache';
 
-register(); // sw.js
+//Bootstrap CSS needed for styling React Bootstrap components
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './global.scss';
 
-console.log('Hello world.');
+register({
+  gqlEndpoints: [process.env.ENDPOINT],
+  cacheExpirationLimit: 20000,
+  cacheMethod: 'cache-network',
+});
 
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);

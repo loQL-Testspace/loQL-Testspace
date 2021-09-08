@@ -1,0 +1,14 @@
+.main-content div {
+  // border: 1px solid red;
+}
+
+.package-features {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+
+  .feature {
+    // max-width: 200px;
+  }
+}

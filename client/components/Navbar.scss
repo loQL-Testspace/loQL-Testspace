@@ -1,0 +1,56 @@
+@use '../variables';
+
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.color {
+  background-color: #f74219!important;
+}
+
+.navigation-link {
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+  color: #fafafa; // variables.$theme-color-light-black;
+
+  &:hover {
+    color: variables.$theme-color-hover;
+  }
+}
+
+.logo-title {
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+  color: #fafafa; // variables.$theme-color-light-black;
+
+  &:hover {
+    color: variables.$theme-color-hover!important;
+  }
+}
+
+.external {
+  font-size: 17px;
+}
+
+// We don't need media screens with bootstrap anymore!
+// @media screen and (max-width: 800px) {
+//   .navBar {
+//     padding: 1em;
+//   }
+//   .navRight a {
+//     padding-left: 10px;
+//     font-size: 15px;
+//   }
+//   .external {
+//     font-size: 13px;
+//   }
+// }
+

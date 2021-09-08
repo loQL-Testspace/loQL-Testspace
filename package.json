@@ -6,11 +6,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js",
-    "start:client": "NODE_ENV=development webpack serve --open",
-    "build:client": "webpack",
-    "start:client:pokemon": "NODE_ENV=development webpack serve --config ./webpack.pokemon.config.js --open",
-    "build:client:pokemon": "webpack --config ./webpack.pokemon.config.js"
+    "start": "concurrently \"npm run dev:webpack\" \"npm run dev:express\"",
+    "dev:webpack": "NODE_ENV=development webpack serve --open",
+    "dev:express": "NODE_ENV=development PORT=3000 nodemon server/index.js",
+    "prod:webpack": "NODE_ENV=production webpack",
+    "prod:express": "NODE_ENV=production PORT=3000 node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,18 +24,38 @@
   },
   "homepage": "https://github.com/jae-ryu/Test-Enviorment#readme",
   "dependencies": {
-    "apollo-server": "^3.1.2",
-    "babel-core": "^6.26.3",
-    "express": "^4.17.1",
+    "node-fetch": "^3.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.1.0",
+    "chart.js": "^3.5.1",
     "graphql": "^15.5.1",
     "graphql-tag": "^2.12.5",
     "html-webpack-plugin": "^5.3.2",
     "lowdb": "^1.0.0",
     "nanoid": "^2.1.1",
-    "nodemon": "^2.0.12",
     "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.6",
+    "react-chartjs-2": "^3.0.4",
+    "react-dom": "^17.0.2",
+    "react-json-view": "^1.21.3",
+    "react-router-dom": "^5.2.0",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.1",
+    "css-loader": "^6.2.0",
+    "dotenv-webpack": "^7.0.3",
+    "file-loader": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "sass": "^1.38.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "url-loader": "^4.1.1"
   }
 }
