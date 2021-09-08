@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { avgDiff, uncahedAvg, cachedAvg, summary } from '@harrisoncramer/loql/helpers/metrics.js';
+import { register } from 'loql-cache';
+import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { Bar, Line } from 'react-chartjs-2';
 
 const Graph = ({ metricData }) => {

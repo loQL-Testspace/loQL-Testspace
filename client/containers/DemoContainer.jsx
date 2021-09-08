@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { query1, query2, query3, query4 } from '../queries';
 import Graph from '../components/Graph.jsx';
 import './Demo.scss';

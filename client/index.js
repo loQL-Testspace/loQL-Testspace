@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import { render } from 'react-dom';
 import App from './app.jsx';
-import { register } from '@harrisoncramer/loql';
+import { register } from 'loql-cache';
 
 //Bootstrap CSS needed for styling React Bootstrap components
 import 'bootstrap/dist/css/bootstrap.min.css';

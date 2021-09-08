@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.color {
+  background-color: #f74219!important;
+}
+
 .navigation-link {
   padding-left: 10px;
   text-decoration: none;
@@ -15,7 +19,7 @@
   color: #fafafa; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-chart-blue;
+    color: variables.$theme-color-hover;
   }
 }
 
@@ -28,7 +32,7 @@
   color: #fafafa; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-chart-blue;
+    color: variables.$theme-color-hover!important;
   }
 }
 

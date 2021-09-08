@@ -9,7 +9,7 @@ export default {
   entry: {
     index: './client/index.js',
     bundle: './client/app.jsx',
-    loQL: './node_modules/@harrisoncramer/loql/loQL.js',
+    loQL: './node_modules/loql-cache/loQL.js',
   },
   devtool: 'eval-source-map',
   output: {
