@@ -82,10 +82,6 @@
 
 
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   text-align: left;
 }
 
@@ -99,6 +95,10 @@
 
   #main-right {
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
   }
   
 }
@@ -106,9 +106,10 @@
 .bike-animation {
   // object-position: 100% 0;
   // object-fit: cover;
-height: 500px !important;
-  margin: -107px -100px -181px -100px !important;
-
+// height: 500px !important;
+  //  margin: -107px -100px -181px -100px !important;
+height:100%;
+width:100%;
 }
 
 .splash-img{
