@@ -2,6 +2,12 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import splashImg from '../assets/hosting.png';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+
+
 import './Main.scss';
 
 const SplashPage = () => {
@@ -51,30 +57,59 @@ const SplashPage = () => {
         </article>
       </Container>
 
-      <Container>
-        <div className="package-features">
-          <div className="feature">
-            <p>GraphQL or Restful</p>
-            Cache GraphQL or Restful APIs from any client (React, Vue, Angular),
+
+
+<Container>
+      <Row xs={1} md={2} className="g-4">
+    <Col>
+      <Card>
+        <Card.Body>
+          <Card.Title className="feature-title">GraphQL and REST</Card.Title>
+          <Card.Text>
+          Cache GraphQL or Restful APIs from any client (React, Vue, Angular),
             mobile app or even IoT device.
-          </div>
-          <div className="feature">
-            <p>Universal support</p>
-            The latest versions of Firefox, Chrome, Opera, Safari and Android
-            fully support service workers and IndexedDB.
-          </div>
-          <div className="feature">
-            <p>Framework agnostic</p>
-            No vendor lock-in or complicated configuration. You can seamlessly
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+    <Col>
+      <Card>
+        <Card.Body>
+          <Card.Title className="feature-title">Universal support</Card.Title>
+          <Card.Text>
+          The latest versions of Firefox, Chrome, Opera, Safari and Android
+            fully support service workers and IndexedDB.          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+    <Col>
+      <Card>
+        <Card.Body>
+          <Card.Title className="feature-title">Framework agnostic</Card.Title>
+          <Card.Text>
+          No vendor lock-in. You can seamlessly
             connect loQL with any Javascript framework of your choice.
-          </div>
-          <div className="feature">
-            <p>Open source</p>
-            The entire codebase is available on GitHub and maintained by a team
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+    <Col>
+      <Card>
+        <Card.Body>
+          <Card.Title className="feature-title">Open source</Card.Title>
+          <Card.Text>
+          The entire codebase is available on GitHub and maintained by a team
             of dedicated developers.
-          </div>
-        </div>
-      </Container>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+</Row>
+</Container>
+
+
+
+    
     </div>
   );
 };
