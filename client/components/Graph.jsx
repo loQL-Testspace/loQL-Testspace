@@ -6,24 +6,21 @@ import { Bar, Line } from 'react-chartjs-2';
 const Graph = ({ metricData }) => {
   // Comes from the summary function.
   const {
-    uncachedAverageTime,
-    cachedAverageTime,
-    percent,
-    totalTimeSaved,
-    totalQueryCalls,
-    individualUncachedSpeeds,
-    individualCachedSpeeds,
+    cachedSpeeds,
+    uncachedSpeeds
   } = metricData;
 
+  const avgCachedSpeeds = cachedSpeeds.reduce((a,b) => a+b) / cachedSpeeds.length;
+
   const longer =
-    individualCachedSpeeds.length > individualUncachedSpeeds.length
-      ? individualCachedSpeeds
-      : individualUncachedSpeeds;
+    cachedSpeeds.length > uncachedSpeeds.length
+      ? cachedSpeeds
+      : uncachedSpeeds;
   let avgUncached = longer;
   let avgCached = longer;
 
-  avgUncached = avgUncached.map((e) => uncachedAverageTime);
-  avgCached = avgCached.map((e) => cachedAverageTime);
+  // avgUncached = avgUncached.map((e) => uncachedAverageTime);
+  // avgCached = avgCached.map((e) => cachedAverageTime);
 
   const uncachedBar = {
     chartData: {
@@ -32,25 +29,25 @@ const Graph = ({ metricData }) => {
         {
           type: 'bar',
           label: 'Uncached Speeds (ms)',
-          data: individualUncachedSpeeds,
+          data: uncachedSpeeds,
         },
         {
           type: 'bar',
           label: 'Cached Speeds (ms)',
-          data: individualCachedSpeeds,
+          data: cachedSpeeds,
           backgroundColor: 'rgba(75, 192, 192, 1)',
         },
-        {
-          type: 'line',
-          label: 'Average Uncached Speeds (ms)',
-          data: avgUncached,
-        },
-        {
-          type: 'line',
-          label: 'Average Cached Speeds (ms)',
-          data: avgCached,
-          backgroundColor: 'rgba(75, 192, 192, 1)',
-        },
+        // {
+        //   type: 'line',
+        //   label: 'Average Uncached Speeds (ms)',
+        //   data: avgUncached,
+        // },
+        // {
+        //   type: 'line',
+        //   label: 'Average Cached Speeds (ms)',
+        //   data: avgCached,
+        //   backgroundColor: 'rgba(75, 192, 192, 1)',
+        // },
       ],
     },
   };
@@ -76,11 +73,11 @@ const Graph = ({ metricData }) => {
       datasets: [
         {
           label: 'Uncached Speeds',
-          data: individualUncachedSpeeds,
+          data: uncachedSpeeds,
         },
         {
           label: 'Cached Speeds',
-          data: individualCachedSpeeds,
+          data: cachedSpeeds,
           backgroundColor: 'rgba(75, 192, 192, 1)',
         },
       ],
