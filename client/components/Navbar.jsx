@@ -8,16 +8,16 @@ import './Navbar.scss';
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="sm" className="navbar color">
+    <Navbar expand="sm" className="navbar navbar-top">
       <Container>
         <Navbar.Brand className="navbar-brand">
-          <img
+          {/* <img
             src={logoUrl}
             width="30"
             height="30"
             className="d-inline-block align-top"
-            alt="React Bootstrap logo"
-          />
+            alt="loQL logo"
+          /> */}
           <Link className="logo-title" to="/">
             loQL
           </Link>
@@ -37,10 +37,17 @@ const NavigationBar = () => {
           </Nav>
           <Nav>
             <Nav.Link className="external" href="https://github.com/oslabs-beta/loQL/">
-              Github
+<<<<<<< Updated upstream
+               <i class="fab fa-github"></i>
+            </Nav.Link>
+            <Nav.Link className="external" href="https://www.npmjs.com/package/loql-cache">
+               <i class="fab fa-npm"></i>
+=======
+              <i class="fab fa-2x fa-github"/>
             </Nav.Link>
             <Nav.Link className="external" href="npm.com">
-              NPM
+              <i class="fab fa-npm fa-2x" />
+>>>>>>> Stashed changes
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

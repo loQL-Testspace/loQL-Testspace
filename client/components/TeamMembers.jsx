@@ -1,8 +1,8 @@
 import React from "react";
 import './TeamMembers.scss';
-// import Github from '../assets/Github.svg';
-// import Linkedin from '../assets/logo.png';
-// import Twitter from '../assets/Logo-blue.png';
+import jae from '../assets/jae.jpg';
+import ak from '../assets/AK.jpg';
+// import kh from '../kh.jpg';
 
 const TeamMembers = () => {
 
@@ -11,7 +11,7 @@ const TeamMembers = () => {
   return (
     <div id="card-inner-container"> 
       <div className="card">
-        <img />
+        <img className="photo" src={jae} width="200" height=""/>
         <div className="socials">
           <a href="https://github.com/jae-ryu"  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
           <a href="https://www.linkedin.com/in/jaeryu/ "  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
@@ -20,17 +20,17 @@ const TeamMembers = () => {
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img />
+        <img className="photo" />
         <div className="socials">
           <a href="https://github.com/harrisoncramer"  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
           <a href="https://www.linkedin.com/in/harrison-cramer/"  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
           <a href="https://twitter.com/harrisoncramer"  target="_blank" ><i class="fab fa-2x fa-twitter-square"></i></a>
         </div>
-        <p className="name">Harrison Kramer</p>
+        <p className="name">Harrison Cramer</p>
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img />
+        <i class="fas fa-user-alt fa-9x photo"></i>
         <div className="socials">
           <a href="https://github.com/lolfill"  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
           <a href="https://www.linkedin.com/in/andrew-f-lee/"  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
@@ -40,19 +40,19 @@ const TeamMembers = () => {
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img />
+        <img className="photo" src={ak} width="200" height="250"/>
         <div className="socials">
-          <a href="https://github.com/uitie"  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/konstantinhamilton/"  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
+          <a href="https://github.com/andrewkess"  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/andrewkessinger/"  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
         </div>
         <p className="name">Andrew Kessinger</p>
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img />
+        {/* <img className="photo" src={kh}/> */}
         <div className="socials">
-          <a href=""  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
-          <a href=""  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
+          <a href="https://github.com/uitie"  target="_blank" ><i class="fab fa-2x fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/konstantinhamilton/"  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
         </div>
         <p className="name">Konstantin Hamilton</p>
         <p className="subtext">Co-founder/Software Engineer</p>
