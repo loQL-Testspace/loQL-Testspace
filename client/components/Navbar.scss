@@ -1,7 +1,7 @@
 @use '../variables';
 
-.navbar-top{
-  background-color: variables.$theme-color-main !important;
+.navbar-top {
+  background-color: variables.$theme-color-main;
 }
 
 .navbar-brand {
@@ -10,21 +10,19 @@
   align-items: center;
 }
 
-.color {
-  background-color: #f74219 !important;
-}
-
 .navigation-link {
   padding-left: 10px;
-  text-decoration: none !important;
+  text-decoration: none;
   font-size: 20px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: bold;
 
-    color: #fafafa !important; // variables.$theme-color-light-black;
+    color: #fafafa; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-hover !important;
+    color: variables.$theme-color-hover;
+    text-decoration: none;
+
   }
 }
 
@@ -37,7 +35,7 @@
   color: #fafafa; // variables.$theme-color-light-black;
 
   &:hover {
-    color: variables.$theme-color-hover!important;
+    color: variables.$theme-color-hover;
   }
 }
 

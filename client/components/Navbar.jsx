@@ -8,7 +8,7 @@ import './Navbar.scss';
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="sm" className="navbar color navbar-top">
+    <Navbar expand="sm" className="navbar navbar-top">
       <Container>
         <Navbar.Brand className="navbar-brand">
           <img

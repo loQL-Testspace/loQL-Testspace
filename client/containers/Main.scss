@@ -21,16 +21,8 @@
 
 //NEW CODE FROM BOOTSTRAP
 
-.small-link a:link,
-a:visited,
-a:hover {
-  text-decoration: underline;
-  color: variables.$theme-color-main !important;
-}
-
-
 .button1 a:link,
-a:visited {
+.button1 a:visited {
   color: white !important;
   background-color: variables.$theme-color-main;
   border: 1px solid variables.$theme-color-main;
@@ -43,7 +35,7 @@ a:visited {
 }
 
 .button1 a:hover,
-a:active {
+.button1 a:active {
     color: variables.$theme-color-subtext-grey !important;
     transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -52,7 +44,7 @@ a:active {
 }
 
 .button2 a:link,
-a:visited {
+.button2 a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -63,7 +55,8 @@ a:visited {
   color: variables.$theme-color-main;
 }
 
-.button2 a:hover, a:active {
+.button2 a:hover, 
+.button2 a:active {
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   background-color: #212529;
