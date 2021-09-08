@@ -23,7 +23,7 @@ const App = () => {
           </Route>
         </Switch>
       </div>
-      <Footer />
+      <Footer className="footer"/>
     </Router>
   );
 };
