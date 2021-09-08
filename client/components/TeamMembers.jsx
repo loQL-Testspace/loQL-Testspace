@@ -17,6 +17,7 @@ const TeamMembers = () => {
           <a href="https://www.linkedin.com/in/jaeryu/ "  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
         </div>
         <p className="name">Jae Ryu</p>
+        <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
         <img />
@@ -26,6 +27,7 @@ const TeamMembers = () => {
           <a href="https://twitter.com/harrisoncramer"  target="_blank" ><i class="fab fa-2x fa-twitter-square"></i></a>
         </div>
         <p className="name">Harrison Kramer</p>
+        <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
         <img />
@@ -35,6 +37,7 @@ const TeamMembers = () => {
           <a href="https://twitter.com/fill_LOL"  target="_blank" ><i class="fab fa-2x fa-twitter-square"></i></a>
         </div>
         <p className="name">Andrew Lee</p>
+        <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
         <img />
@@ -43,6 +46,7 @@ const TeamMembers = () => {
           <a href="https://www.linkedin.com/in/konstantinhamilton/"  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
         </div>
         <p className="name">Andrew Kessinger</p>
+        <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
         <img />
@@ -51,6 +55,7 @@ const TeamMembers = () => {
           <a href=""  target="_blank" ><i class="fab fa-2x fa-linkedin"></i></a>
         </div>
         <p className="name">Konstantin Hamilton</p>
+        <p className="subtext">Co-founder/Software Engineer</p>
       </div>
     </div>
   )
