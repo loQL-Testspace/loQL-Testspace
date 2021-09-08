@@ -4,11 +4,7 @@ import NavBar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import DemoContainer from './containers/DemoContainer';
 import MainContainer from './containers/MainContainer';
-<<<<<<< Updated upstream
-// import TeamContainer from "./containers/TeamContainer";
-=======
 import TeamContainer from "./containers/TeamContainer";
->>>>>>> Stashed changes
 
 const App = () => {
   return (
@@ -19,15 +15,9 @@ const App = () => {
           <Route path="/demo">
             <DemoContainer />
           </Route>
-<<<<<<< Updated upstream
-          {/* <Route path="/team"> */}
-          {/*   <TeamContainer /> */}
-          {/* </Route> */}
-=======
           <Route path="/team">
             <TeamContainer />
           </Route>
->>>>>>> Stashed changes
           <Route path="/">
             <MainContainer />
           </Route>

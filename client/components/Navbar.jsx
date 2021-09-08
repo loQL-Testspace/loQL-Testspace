@@ -37,17 +37,10 @@ const NavigationBar = () => {
           </Nav>
           <Nav>
             <Nav.Link className="external" href="https://github.com/oslabs-beta/loQL/">
-<<<<<<< Updated upstream
                <i class="fab fa-github"></i>
             </Nav.Link>
             <Nav.Link className="external" href="https://www.npmjs.com/package/loql-cache">
                <i class="fab fa-npm"></i>
-=======
-              <i class="fab fa-2x fa-github"/>
-            </Nav.Link>
-            <Nav.Link className="external" href="npm.com">
-              <i class="fab fa-npm fa-2x" />
->>>>>>> Stashed changes
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
