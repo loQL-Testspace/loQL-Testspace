@@ -23,7 +23,7 @@
 
 .button1 a:link,
 .button1 a:visited {
-  color: white !important;
+  color: white;
   background-color: variables.$theme-color-main;
   border: 1px solid variables.$theme-color-main;
   text-align: center;
@@ -36,7 +36,7 @@
 
 .button1 a:hover,
 .button1 a:active {
-    color: variables.$theme-color-subtext-grey !important;
+    color: variables.$theme-color-subtext-grey;
     transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   background-color: variables.$theme-color-hover;
@@ -139,7 +139,7 @@
 .button-link1  {
     font-size: 20px;
     width: 100%;
-    color: white !important;
+    color: white;
     padding: 15px 0px;
   }
 
