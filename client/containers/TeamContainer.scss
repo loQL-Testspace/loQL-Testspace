@@ -3,7 +3,6 @@
 #team-content {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
 
   .subtext {
     color: variables.$theme-color-subtext-grey;
@@ -11,7 +10,6 @@
 
   #team-container {
     margin-top: 10rem;
-    margin-bottom: 10rem;
     display: flex;
   }
 
