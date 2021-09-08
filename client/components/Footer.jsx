@@ -14,7 +14,7 @@ const Footer = () => {
             <Navbar.Text>
               Product development accelerated by{' '}
               <a href="https://opensourcelabs.io/" target="_blank">
-                OS Labs
+                OSLabs
               </a>
               . Issues or concerns? Report them to our{' '}
               <a href="https://github.com/oslabs-beta/loQL" target="_blank">
