@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/jae-ryu/Test-Enviorment#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "loql-cache": "^1.0.0",
     "node-fetch": "^3.0.0"
   },
   "devDependencies": {
