@@ -8,7 +8,7 @@ export default {
   entry: {
     index: './client/index.js',
     bundle: './client/app.jsx',
-    sw: './node_modules/loql/sw.js',
+    loQL: './node_modules/loql/loQL.js',
   },
   devtool: 'eval-source-map',
   output: {
@@ -35,7 +35,7 @@ export default {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif)$/i,
