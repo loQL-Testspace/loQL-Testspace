@@ -16,7 +16,7 @@ const SplashPage = () => {
       <Container>
         <article className="main">
           <div className="splash">
-            <div>
+            <div id="main-left">
               <div className="bigTitle">Fast, performant GraphQL caching</div>
               <div className="bigDescription">
                 loQL is a lightweight, open source npm package that caches API
@@ -24,7 +24,7 @@ const SplashPage = () => {
                 enabling offline use.
               </div>
             </div>
-            <div>
+            <div id="main-right">
               <img src={splashImg} className="splash-img"></img>
             </div>
           </div>
