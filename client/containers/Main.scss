@@ -82,6 +82,10 @@
 
 
 .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-align: left;
 }
 
@@ -94,9 +98,6 @@
   }
 
   #main-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 50%;
   }
   
