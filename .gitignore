@@ -3,4 +3,4 @@ package-lock.json
 build
 .DS_Store
 brainstorm.txt
-.production.env
+nginx.conf

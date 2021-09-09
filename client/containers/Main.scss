@@ -1,6 +1,5 @@
 @use '../variables';
 
-
 .package-features {
   width: 100%;
   display: flex;
@@ -8,15 +7,17 @@
   flex-direction: wrap;
 }
 
-.big-liner{
+.big-liner {
   font-size: 50px;
 }
 
 
-.feature p{
- font-weight: bold;
- font-size: 20px;
-}
+.feature-title{
+  font-weight: bold;
+  font-size: 20px;
+  //color: variables.$theme-color-complementary;
+ }
+
 
 //NEW CODE FROM BOOTSTRAP
 
@@ -35,11 +36,10 @@
 
 .button1 a:hover,
 .button1 a:active {
-    transition: all 0.4s ease;
+  transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   border: 1px solid variables.$theme-color-complementary;
   background-color: variables.$theme-color-complementary;
-
 }
 
 .button2 a:link,
@@ -55,7 +55,7 @@
   background-color: variables.$theme-color-light-white;
 }
 
-.button2 a:hover, 
+.button2 a:hover,
 .button2 a:active {
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -64,20 +64,16 @@
   color: white;
 }
 
-
-
 .bigTitle {
   font-size: 4em;
   line-height: 1em;
   margin-bottom: 20px;
 }
 
-
 .bigDescription {
   font-size: 18px;
   line-height: 1.5em;
 }
-
 
 .main {
   text-align: left;
@@ -86,20 +82,28 @@
 .splash {
   display: flex;
   flex-flow: row wrap;
-  
+
   #main-left {
     width: 50%;
   }
 
   #main-right {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
-  }
   
+  }
 }
 
+.bike-animation {
+  // object-position: 100% 0;
+  // object-fit: cover;
+// height: 500px !important;
+  //  margin: -107px -100px -181px -100px !important;
+width:100%;
+// border: 1px solid green;
+}
 
 .splash-img{
   height: 200px;
@@ -111,31 +115,25 @@
   flex-direction: row;
 }
 
-
-.gray-link{
+.gray-link {
   color: variables.$theme-color-light-black;
   &:hover {
     color: variables.$theme-color-light-black;
   }
 }
 
-
 @media all and (min-width: 300px) {
-
   .main {
     order: 2;
     text-align: center;
     padding: 2rem 1rem;
-
   }
-
 
   .bigTitle {
     font-size: 2.6em;
     line-height: 1em;
     color: rgb(37, 36, 36);
   }
-
 
   .bigDescription {
     font-size: 1.4em;
@@ -148,48 +146,47 @@
     margin: 10px 0px;
   }
 
-.button1, .button2, .button3{
+  .button1,
+  .button2,
+  .button3 {
     width: 100%;
     padding-bottom: 10px;
-}
+  }
 
-.button-link1  {
+  .button-link1 {
     font-size: 20px;
     width: 100%;
     color: white;
     padding: 15px 0px;
   }
 
-  .button-link2, .button-link3  {
+  .button-link2,
+  .button-link3 {
     width: 100%;
 
     font-size: 20px;
     padding: 15px 0px;
   }
-
-
-
 }
 
 @media all and (min-width: 769px) {
-
   .bigTitle {
     font-size: 3em;
     line-height: 1em;
     margin-bottom: 20px;
+    font-weight: bold;
   }
-  
+
   .bigDescription {
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.3em;
   }
 
   .main {
     /* tell the main column to take up twice the space as the aside */
     flex: 2 0px;
     text-align: left;
-    padding: 0 0 3rem 0; 
-
+    padding: 0 0 3rem 0;
   }
   .main {
     order: 1;
@@ -199,44 +196,40 @@
     flex-direction: row;
   }
 
-  .button1, .button2, .button3{
+  .button1,
+  .button2,
+  .button3 {
     width: auto;
     padding-bottom: 10px;
-}
+  }
 
-  .button-link1, .button-link2, .button-link3  {
+  .button-link1,
+  .button-link2,
+  .button-link3 {
     font-size: 20px;
     width: auto;
     padding: 15px 30px;
-    margin-right:15px;
+    margin-right: 15px;
   }
-
-  
-
 }
 
 @media all and (max-width: 765px) {
-
   .bigTitle {
     font-size: 3em;
     line-height: 1em;
     font-weight: bold;
   }
 
-  .bigDescription {
-    font-size: 1em;
-    line-height: 1.5em;
-    padding-bottom: 1rem;
-  }
+ 
 
   .splash {
     display: flex;
     flex-flow: column wrap;
-    
+
     #main-left {
       width: 100%;
     }
-  
+
     #main-right {
       display: flex;
       align-items: center;
@@ -250,3 +243,4 @@
     flex-direction: column;
   }
 }
+

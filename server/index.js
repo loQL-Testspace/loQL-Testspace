@@ -2,6 +2,7 @@ import express from 'express';
 import fetch from 'node-fetch';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -11,6 +12,11 @@ app.use(express.json());
 
 const PORT = 3000;
 const API = 'https://rickandmortyapi.com/graphql';
+
+// Configure CORS in production?
+if (process.env.NODE_ENV === 'production') {
+  app.use(cors());
+}
 
 const performGQLQuery = async (body) => {
   const query = {
