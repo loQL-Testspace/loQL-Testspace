@@ -5,17 +5,20 @@
 }
 
 .button-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-  gap: 0.5em;
 
   button {
-    padding: 0.25em;
+    width: 7rem;
+    height: 4rem;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: variables.$theme-color-main;
-    border-radius: 3px;
-    border: none;
-    padding: 0.5em 0.85em;
+    color: white;
+    background-color: variables.$theme-color-main;
+    border: 1px solid variables.$theme-color-main;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
     &:hover {
       
       filter: brightness(108%);
@@ -25,10 +28,40 @@
   margin-bottom: 1em;
 }
 
+.queryData {
+  display: flex;
+  margin-top:  0.5em;
+  margin-bottom: 0.5em; 
+  max-width: 100%;
+  max-height: 250px;
+  overflow: auto;
+}
+
+
+.query {
+  display: flex;
+  flex-direction: column;
+
+  .tophalf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .queryMetric {
+      width: 100%;
+    }
+  }
+}
+
 h2{
   color: variables.$theme-color-light-black;  
 }
 
 pre.__json-pretty__ {
   padding: 1em;
+}
+
+.main-left {
+  margin-bottom: 3rem;
 }
