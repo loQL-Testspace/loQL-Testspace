@@ -51,8 +51,8 @@ const Graph = ({ metricData }) => {
   };
 
   return (
-    <div className="speedBar">
-      <div className="graph">
+    <div>
+      <div id="speedBar">
         <Bar data={uncachedBar.chartData} options={barOptions} />
       </div>
       {avgCachedSpeed && (

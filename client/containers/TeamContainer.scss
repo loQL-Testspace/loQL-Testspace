@@ -9,21 +9,39 @@
   }
 
   #team-container {
-    margin-top: 10rem;
     display: flex;
   }
 
   #team-summary {
-    width: 50%;
+    width: 80%;
+    justify-content: center;
   }
 
-  #team-cards{
+  #team-cards {
     margin-top: 5rem;
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 }
 
+@media all and (max-width: 768px) {
+  #team-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    #team-container {
+      margin-top: 0em;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}
