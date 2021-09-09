@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { query1, query2, query3, query4 } from '../queries';
 import Graph from '../components/Graph.jsx';
+import QueryModal from '../components/QueryModal.jsx';
 import './Demo.scss';
+import '../components/QueryModal.scss';
 import ReactJson from 'react-json-view';
 import { get } from 'loql-cache/helpers/initializeIndexDb';
 
 const URL = process.env.ENDPOINT;
 const Demo = () => {
-  // const [lastQueryData, setLastQueryData] = useState(null);
-  // const [metrics, setMetrics] = useState(null);
   const [query1Metrics, setQuery1Metrics] = useState(null);
   const [query2Metrics, setQuery2Metrics] = useState(null);
   const [query3Metrics, setQuery3Metrics] = useState(null);
@@ -18,6 +18,7 @@ const Demo = () => {
   const [query2Data, setQuery2Data] = useState(null);
   const [query3Data, setQuery3Data] = useState(null);
   const [query4Data, setQuery4Data] = useState(null);
+  const [inHover, setHover] = useState(false);
 
   const hashedKeyLookup = {
     'query1': "f21b6ea98bc3144c499b59194c73a3ef",
@@ -52,9 +53,7 @@ const Demo = () => {
   
   // Sets state, metrics then passed into ChartJS for display Data is passed into ReactJSON for display.
   async function setStateFromData({ data }, queryNumber) {
-    // const metrics = await summary(false);
-    // setMetrics(metrics);
-    // setLastQueryData(data);
+
     let hashedKey;
     let queryMetrics;
     switch (queryNumber) {
@@ -86,22 +85,36 @@ const Demo = () => {
     }
   }
 
+  const queryString = `
+    query {
+      characters {
+        results {
+          name
+          species
+        }
+      }
+    }
+  `
+
   return (
     <div className="demo-content">
       <div id="main-left">
         <div className="bigTitle">See the benefits of our solution</div>
         <div className="bigDescription">
           Each button below represents GraphQL queries of varying complexities.
-          Click on each to compare data retrieval speeds from cache vs. server,
-          in addition to the returned data for the client.
+          Click each to compare data retrieval speeds from cache vs. server,
+          in addition to the returned data for the client, using the <a href='https://rickandmortyapi.com/'>Rick & Morty API</a>
         </div>
       </div>      
       <div className="query">
         <div className='tophalf'>
           <div className="button-list">
-            <button className="queries" onClick={() => getDataFromAPI(1)}>
+            <button className="queries" onClick={() => getDataFromAPI(1)} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
               Get Homeworld
             </button>
+            {/* {inHover ? 
+              <QueryModal /> : null
+            } */}
           </div>
           <div className="queryMetric">
             {query1Metrics && <Graph metricData={query1Metrics} />}
@@ -130,7 +143,7 @@ const Demo = () => {
             </button>
           </div>
           <div className="queryMetric">
-            {query2Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query2Metrics} />}
+            {query2Metrics && <Graph metricData={query2Metrics} />}
           </div>
         </div>
         <div className="queryData">
@@ -156,7 +169,7 @@ const Demo = () => {
             </button>
           </div>
           <div className="queryMetric">
-            {query3Metrics && <Graph displayTitle="true" legendPosition="right" metricData={query3Metrics} />}
+            {query3Metrics && <Graph metricData={query3Metrics} />}
           </div>
         </div>
         <div className="queryData">
@@ -178,7 +191,7 @@ const Demo = () => {
         <div className='tophalf'>
           <div className="button-list">
             <button className="queries" onClick={() => getDataFromAPI(4)}>
-              Get Location by ID
+              Get Location
             </button>
           </div>
           <div className="queryMetric">

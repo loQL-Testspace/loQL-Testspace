@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { register } from 'loql-cache';
 import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { Bar, Line } from 'react-chartjs-2';
-import "chartjs-plugin-datalabels";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const Graph = ({ metricData }) => {
   // Comes from the summary function.
@@ -11,30 +11,12 @@ const Graph = ({ metricData }) => {
     uncachedSpeeds
   } = metricData;
   
-  const avgUncachedSpeed = uncachedSpeeds.reduce((a,b) => a+b,0) / uncachedSpeeds.length;
-  const avgCachedSpeed = cachedSpeeds.reduce((a,b) => a+b,0) / cachedSpeeds.length;
+  const avgUncachedSpeed = Math.round(uncachedSpeeds.reduce((a,b) => a+b,0) / uncachedSpeeds.length);
+  const avgCachedSpeed = Math.round(cachedSpeeds.reduce((a,b) => a+b,0) / cachedSpeeds.length);
   
-  console.log(cachedSpeeds);
-  console.log(uncachedSpeeds);
-
-  // let avgUncachedSpeed;
-  // if (uncachedSpeeds) {
-  //   avgUncachedSpeed= uncachedSpeeds.reduce((a,b) => a+b,0)
-  // }
-
-  console.log('avgUncachedSpeed =', avgUncachedSpeed);
-
-  // let avgCachedSpeed;
-  // if (cachedSpeeds) {
-  //   avgCachedSpeed = cachedSpeeds.reduce((a,b) => a+b,0) 
-  // }
-
-  console.log('avgCachedSpeed =', avgCachedSpeed);
-
-
   const timeSaving = Math.floor((1 - (avgCachedSpeed / avgUncachedSpeed)) * 100)
 
-  const uncachedBar = {
+  const dataBar = {
     chartData: {
       labels: ['Uncached Speed', 'Cached Speed'],
       datasets: [
@@ -53,43 +35,47 @@ const Graph = ({ metricData }) => {
       datalabels: {
         display: true,
         color: 'black',
-        align: 'end',
-        anchor: 'end',
-        font: { size: '14' }
+        align: 'right',
+        offset: 10,
+        anchor: 'start',
+        font: { size: '18', fontFamily: 'Roboto', weight: 'bold' },
+        formatter: function(value) {
+          if (isNaN(value)) return '';
+          return value.toLocaleString() + ' ms';
+        }
       },
       legend: {
-        display: false
-      }
+        display: false,
+      },
     },
-    // legend: {
-    //   labels: {
-    //       fontSize: 0
-    //   }
-    // },
     responsive: true,
     maintainAspectRatio: false,
     indexAxis: 'y',
     scales: {
       x: {
-        // gridLines: { display: false},
-        display: false
+        display: false,
       },
+      y: {
+        ticks: {
+          font: { size: '15', fontFamily: 'Roboto' }
+        }
+      }
     },
   };
 
   return (
     <div className="speedBar">
       <div className="graph">
-        <Bar data={uncachedBar.chartData} options={barOptions} />
+        <Bar data={dataBar.chartData} plugins={[ChartDataLabels]} options={barOptions}/>
       </div>
-      {avgCachedSpeed && 
         <div className="savings">
           <div id="metrics"> 
-            <div id='percentage'>{timeSaving}%</div> 
+          {avgCachedSpeed ? 
+            <div id='percentage'>{timeSaving}%</div> : <div id='percentage'>%</div>
+          }
             <div id='savingsText'>avg time savings</div>
           </div>
         </div>
-      }
     </div>
   );
 };
