@@ -42,7 +42,7 @@ const SplashPage = () => {
           </div>
 
           <div>
-            Currently <strong>v1.0.0</strong> ·{' '}
+            <strong>v1.0.0</strong> ·{' '}
             <Link className="gray-link" to="docs">
               Latest docs
             </Link>{' '}
