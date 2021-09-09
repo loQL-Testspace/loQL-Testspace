@@ -2,11 +2,10 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import './Docs.scss';
 
-const webpack = `
-const path = require('path');
+const webpack = `const path = require('path');
 
 module.exports = {
   entry: {
@@ -21,16 +20,12 @@ module.exports = {
   devServer: {
     static: './client',
   },
-};
-`;
+};`;
 
-const registration = `
-  import { register } from "loql-cache";
+const registration = `import { register } from "loql-cache";
   register({ gqlEndpoints: ["https://my-site.com/api/graphql"] });
   
-  ... The rest of your application ...
-
-`;
+  ... The rest of your application ...`;
 const DocsContainer = () => {
   return (
     <div className="main-content">
@@ -44,36 +39,43 @@ const DocsContainer = () => {
           <article className="docs">
             <p>
               At loQL, we strive to make intuitive software. If anything in this documentation is
-              unclear, please drop <Link to="/team">someone on the team</Link> a message and we'll
-              be happy to help out. The project is fully open source and is taking contributions on{' '}
+              unclear, please <Link to="/team">contact the team</Link> and we'll be happy to help
+              out. The project is fully open source and is taking contributions on{' '}
               <a href="https://github.com/oslabs-beta/loQL/">Github</a>.
             </p>
             <section>
               <h3>Who is this package for?</h3>
               <p className="install">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi at voluptate
-                voluptatibus natus beatae facere reprehenderit nemo veniam similique harum eaque
-                quibusdam quisquam alias doloribus, voluptatum corrupti ipsam laudantium ut.
+                This package was designed to make offline caching easier for anyone using a GraphQL
+                API. The package is extremely small, because it leverages existing browser-native
+                APIs like{' '}
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">
+                  service workers
+                </a>{' '}
+                and{' '}
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">
+                  {' '}
+                  IndexedDB{' '}
+                </a>{' '}
+                It's a great choice for developers looking for an out-of-the-box offline caching
+                solution, and who don't wan't to use a heavier alternative like Apollo Client.
               </p>
               <p className="install">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, sapiente? Aspernatur
-                ab enim, accusantium repudiandae, exercitationem dolore odio facilis, dolores at
-                eaque nesciunt laboriosam iste voluptates fugiat optio obcaecati consequatur?
+                The package is capable of caching GraphQL queries made via GET or POST requests.
               </p>
             </section>
             <section>
               <h3>Installation</h3>
               <p>First, install the package using your favorite package manager.</p>
-              <SyntaxHighlighter language="bash" style={docco}>
+              <SyntaxHighlighter language="bash" style={dracula}>
                 $ npm install loql-cache
               </SyntaxHighlighter>
               <p>
-                After you install local-cache, you'll need to tell Webpack that it's there. The
-                service worker file is located inside of the loql-cache directory. With Webpack, it
-                can be bundled with the rest of your assets using a single line in the configuration
-                file.
+                After installing loql, you'll need to tell your bundler to include the service
+                worker file with your code. With Webpack, this can be accomplished a single line in
+                the configuration file.
               </p>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={dracula}>
                 {webpack}
               </SyntaxHighlighter>
               <p>
@@ -87,14 +89,16 @@ const DocsContainer = () => {
               <p>
                 The loQL service worker needs to be registered at some point in your project. It
                 also needs to be told which GraphQL endpoints to cache data from—this is the only{' '}
-                <em>required</em> configuration setting. inside of one of our Javascript files.
+                <em>required</em> configuration setting.
               </p>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={dracula}>
                 {registration}
               </SyntaxHighlighter>
               <p>
-                Congratulations, the loql-cache service worker will now cache data from that API.
-                The other (optional) configuration options are detailed below.
+                Your service worker will now cache data from the GraphQL API. By default, the
+                service worker will employ a "cache-first" network strategy. This can be configured
+                during the registration step. The full list of configuration options are detailed
+                below.
               </p>
             </section>
             <section>
@@ -107,55 +111,75 @@ const DocsContainer = () => {
               <div>
                 <div className="args">
                   <span className="name">gqlEndpoints:</span>
-                  <span className="isRequired">Required</span>
                   <span className="type">string[]</span>
+                  <span className="isRequired">Required</span>
                   <p className="description">
-                    Add GraphQL endpoint URL's to be enabled for caching.
+                    Enable caching for specific GraphQL endpoint URLs. Network calls from the
+                    browser to any URL not listed here will be ignored by the service worker and the
+                    response data will not be cached.
                   </p>
                 </div>
                 <div className="args">
                   <span className="name">useMetrics:</span>
-                  <span className="isRequired">Optional</span>
                   <span className="type">boolean</span>
-                  <p className="description">Enable metrics collection.</p>
+                  <span className="isOptional">Optional</span>
+                  <p className="description">
+                    Enable metrics collection. The metrics will store the overall speed of cached
+                    and uncached API calls, and the average amount of time saved in IndexedDB.
+                    Should be disabled when deploying your application to a production environment.
+                  </p>
                 </div>
                 <div className="args">
-                  <span className="name">cacheMethod</span>
-                  <span className="isRequired">Optional</span>
+                  <span className="name">cacheMethod:</span>
                   <span className="type">string</span>
-                  <p className="description">Desired caching strategy.</p>
+                  <span className="isOptional">Optional</span>
+                  <p className="description">
+                    Desired caching strategy. The loql-cache package supports both "cache-first" and
+                    "cache-network" policies.
+                  </p>
                 </div>
                 <div className="args">
-                  <span className="name">cacheExpirationLimit</span>
-                  <span className="isRequired">Optional</span>
+                  <span className="name">cacheExpirationLimit:</span>
                   <span className="type">Integer</span>
+                  <span className="isOptional">Optional</span>
                   <p className="description">
-                    Interval, in milliseconds, at which to refresh cached data.
+                    The interval, in milliseconds, after which cached data is considered stale. The
+                    service worker will refetch the data from your API if the data is found to be
+                    stale and will update the cache.
                   </p>
                 </div>
                 <div className="args">
-                  <span className="name">doNotCacheGlobal</span>
-                  <span className="isRequired">Optional</span>
+                  <span className="name">doNotCacheGlobal:</span>
                   <span className="type">string[]</span>
+                  <span className="isOptional">Optional</span>
                   <p className="description">
-                    Define graphQL fields which, if detected in a query, will prevent the data from
-                    being cached.
+                    Fields on a GraphQL query that will prevent the query from being cached, no
+                    matter the endpoint. For instance, you may have constantly-changing data that
+                    you do not want the service worker to cache at all, or sensitive fields that
+                    should not be cached in the browser. In order to define endpoint-specific fields
+                    that should not be cached, see the <i>doNotCacheCustom</i> setting.
                   </p>
                 </div>
                 <div className="args">
-                  <span className="name">doNotCacheCustom</span>
-                  <span className="isRequired">Optional</span>
-                  <span className="type">string[]</span>
+                  <span className="name">doNotCacheCustom:</span>
+                  <span className="type">&#123; [url]: string[] &#125; </span>
+                  <span className="isOptional">Optional</span>
                   <p className="description">
-                    Define endpoint-specific fields which, if detected in a query, will prevent the
-                    data from being cached.
+                    This setting is like <i>doNotCacheGlobal</i>, but can be used on a per-endpoint
+                    basis. The object associates URLs (as keys in the object) with a list of GraphQL
+                    fields. Queries made to the URLs that contain any of those fields will not be
+                    cached.
                   </p>
                 </div>
               </div>
             </section>
             <section>
-              <h3>Future Development</h3>
-              <p>The package </p>
+              <h3>Usage Notes</h3>
+              <p>
+                This package is still in beta, and currently does not support mutations, directives,
+                and subscriptions. The team is currently developing a normalized caching solution
+                that will enable mutation support.
+              </p>
             </section>
           </article>
         </article>
@@ -166,68 +190,3 @@ const DocsContainer = () => {
 };
 
 export default DocsContainer;
-
-// # loQL
-
-// A light, modular npm package for performant client-side GraphQL caching with Service Workers and IndexedDB.
-
-// ## Installation
-
-// Install via [npm](https://www.npmjs.com/package/loql)
-
-// ```bash
-// npm install loql
-// ```
-
-// ## Usage
-
-// I. Set Configuration Object:
-
-// a. gqlEndpoints (Required): Add GraphQL endpoint URL's to be enabled for caching. (Array of strings)
-
-// b. useMetrics (Optional): Enable metrics collection. (Boolean)
-
-// c. cacheMethod (Optional): Desired caching strategy. (String)
-
-// d. cacheExpirationLimit (Optional): Interval, in milliseconds, at which to refresh cached data. (Integer)
-
-// e. doNotCacheGlobal (Optional): Define schema-specific types/fields, whose inclusion in a query will render that query ignored by the caching logic. (Arrays of strings)
-
-// f. doNotCacheCustom (Optional): Similar to above, but endpoint-specific. (Object where each key is an endpoint, and the corresponding value is the array of types/fields intended to bypass the cache.
-
-// ```javascript
-// {
-//   gqlEndpoints: ['http://localhost:<###>/api/graphql', 'https://<abc>.com/graphql'],
-//   useMetrics: false,
-//   cacheExpirationLimit: 20000,
-//   cacheMethod: 'cache-network',
-//   doNotCacheGlobal: [],
-//   doNotCacheCustom: {
-//      'http://localhost:<###>/api/graphql': ['password'],
-//      'https://<abc>.com/graphql': ['account', 'real_time_data'];
-//   }
-// }
-// ```
-
-// ## Features
-// - Enables offline use: IndexedDB storage provides high-capacity and persistent storage, while keeping reads/writes asynchronous
-// - Minimum-dependency: No server-side component, avoid the use of large libraries
-// - Cache validation: Keep data fresh with shorter expiration limits, cache-network strategy, or both!
-// - Easy-to-use: Install package, pass in Configuration Object, start caching
-// - Flexible: Works with GQL queries made as both fetch POST and GET requests
-//   Easily exempt, specific, desired types of queries from being cached
-
-// ## Usage Notes
-// - Caching is currently only supported for query-type operations. Mutations, subscriptions, etc will still run,
-//   but will not be cached.
-// - Cached data normalization feature is disabled.
-
-// ## Supported Browsers
-// - Desktop: Edge, Firefox, Chrome, Safari, Opera
-// - Mobile: Firefox, Chrome, Android Browser, Samsung Internet
-
-// ## Contributing
-// Contributions are welcome. Please read CONTRIBUTE.md prior to making a Pull Request.
-
-// ## License
-// [MIT](https://choosealicense.com/licenses/mit/)

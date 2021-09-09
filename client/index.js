@@ -10,7 +10,7 @@ import './global.scss';
 
 register({
   gqlEndpoints: [process.env.ENDPOINT, 'https://rickandmortyapi.com/graphql'],
-  cacheExpirationLimit: 20000,
+  cacheExpirationLimit: 10000,
   cacheMethod: 'cache-network',
 });
 

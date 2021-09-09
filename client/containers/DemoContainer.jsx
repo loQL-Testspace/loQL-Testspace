@@ -64,7 +64,6 @@ const Demo = () => {
       case 1:
         hashedKey = hashedKeyLookup.query1;
         queryMetrics = await get('metrics', hashedKey);
-        // queryMetrics=resultMetric;
         setQuery1Metrics(queryMetrics);
         setQuery1Data(data);
         break;
@@ -105,9 +104,13 @@ const Demo = () => {
       <div className="main-left">
         <h1>See the benefits of our solution</h1>
         <p>
-          Each button below represents GraphQL queries of varying complexities. Click each to
-          compare data retrieval speeds from cache vs. server, in addition to the returned data for
-          the client using the <a href="https://rickandmortyapi.com/">Rick & Morty API</a>
+          The buttons below represent GraphQL queries of varying complexities. Click them to compare
+          data retrieval speeds from the cache versus the server, in addition to the returned data
+          for the client using the <a href="https://rickandmortyapi.com/">Rick & Morty API</a>.
+        </p>
+        <p>
+          This site's service worker considers cached data older than 10 seconds to be stale. At
+          that point, our application will bypass the cache and refetch data from the API.
         </p>
       </div>
 

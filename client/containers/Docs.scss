@@ -22,13 +22,34 @@
 }
 
 .args {
+  p.isOptional,
+  p.isRequired {
+    padding-bottom: 0px;
+  }
+
+  span {
+    font-family: monospace;
+    padding-right: 0.5rem;
+  }
+
+  span.isOptional,
+  span.isRequired {
+    font-style: italic;
+  }
+
+  // .isRequired {
+  //   color: variables.$theme-color-main;
+  // }
+
+  // .isOptional {
+  //   color: variables.$theme-color-subtext-grey;
+  // }
+
   .name {
     font-weight: bold;
   }
 }
-// <div className="args">
-//   <span className="name">gqlEndpoints:</span>
-//   <span classsName="isRequired">Required</span>
-//   <span className="type">string[]</span>
-//   <p className="description">
-//     Add GraphQL endpoint URL's to be enabled for caching.
+
+pre {
+  padding: 1em !important;
+}
