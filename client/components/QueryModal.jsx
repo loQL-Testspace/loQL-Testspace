@@ -1,25 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './QueryModal.scss';
 
-const QueryModal = () => {
-
-  const queryString = `
-    query {
-      characters {
-        results {
-          name
-          species
-        }
-      }
-    }
-  `
-  const splitted = queryString.valueOf().split('\n');
+const QueryModal = ({ queryInfo }) => {
 
   return (
     <div className='modal'>
+      <div className='preText'>
+        GraphQL Query:
+      </div>
       <div className='queryText'>
-        {queryString}
-        {splitted}
+        {queryInfo}
       </div>
     </div>
   );

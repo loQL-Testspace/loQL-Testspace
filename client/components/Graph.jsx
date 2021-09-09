@@ -20,7 +20,7 @@ const Graph = ({ metricData }) => {
 
   const dataBar = {
     chartData: {
-      labels: ['Uncached Speed', 'Cached Speed'],
+      labels: ['Fetched from Server', 'Fetched from Cache'],
       datasets: [
         {
           type: 'bar',
@@ -36,7 +36,7 @@ const Graph = ({ metricData }) => {
     plugins: {
       datalabels: {
         display: true,
-        color: 'black',
+        color: '#f74219',
         align: 'right',
         offset: 10,
         anchor: 'start',
