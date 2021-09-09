@@ -5,18 +5,20 @@
 }
 
 .button-list {
-  // Buttons...
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-  gap: 0.5em;
-
   button {
-    padding: 0.25em;
+    width: 8rem;
+    height: 5rem;
+    padding: 0.5rem;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: variables.$theme-color-main;
-    border-radius: 3px;
-    border: none;
-    padding: 0.5em 0.85em;
+    color: white;
+    background-color: variables.$theme-color-main;
+    border: 1px solid variables.$theme-color-main;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
     &:hover {
       filter: brightness(108%);
       cursor: pointer;
@@ -27,9 +29,8 @@
 
 .queryData {
   display: flex;
-  /* padding: 0.5em;*/
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 2rem;
   max-width: 100%;
   max-height: 250px;
   overflow: auto;
@@ -51,10 +52,6 @@
   }
 }
 
-.graph {
-  width: 100%;
-}
-
 h2 {
   color: variables.$theme-color-light-black;
 }
@@ -63,18 +60,20 @@ pre.__json-pretty__ {
   padding: 1em;
 }
 
-.speedBar {
-  display: flex;
-  flex-direction: row;
+.main-left {
+  margin-bottom: 3rem;
 }
 
-.savings {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+@media all and (max-width: 610px) {
+  .query .tophalf {
+    flex-direction: column;
+  }
 
-  h4 {
-    align-items: center;
+  .graph {
+    margin-left: 0px;
+  }
+
+  .queryData {
+    max-height: none;
   }
 }
-
