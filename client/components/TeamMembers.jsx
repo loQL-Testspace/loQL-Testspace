@@ -4,6 +4,7 @@ import ak from '../assets/ak.jpg';
 import harry from '../assets/harry.jpeg';
 import kh from '../assets/kh.jpg';
 import al from '../assets/al.png';
+import jae from '../assets/jae.jpg'
 
 const TeamMembers = () => {
   {
@@ -13,10 +14,10 @@ const TeamMembers = () => {
   return (
     <div id="card-inner-container">
       <div className="card">
-        {/* <img className="photo" src={jae} width="200" height=""/> */}
+        <img className="photo" src={jae}/>
         <div className="socials">
           <a href="https://github.com/jae-ryu"  target="_blank" >
-            <i className="fab fa-2x fa-github"></i>
+            <i className="fab fa-2x fa-github"></i> 
           </a>
           <a href="https://www.linkedin.com/in/jaeryu/ "  target="_blank" >
             <i className="fab fa-2x fa-linkedin"></i>
