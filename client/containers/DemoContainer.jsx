@@ -88,8 +88,14 @@ const Demo = () => {
 
   return (
     <div className="demo-content">
-      <h2></h2>
-      
+      <div id="main-left">
+        <div className="bigTitle">See the benefits of our solution</div>
+        <div className="bigDescription">
+          Each button below represents GraphQL queries of varying complexities.
+          Click on each to compare data retrieval speeds from cache vs. server,
+          in addition to the returned data for the client.
+        </div>
+      </div>      
       <div className="query">
         <div className='tophalf'>
           <div className="button-list">

@@ -10,11 +10,29 @@ const Graph = ({ metricData }) => {
     cachedSpeeds,
     uncachedSpeeds
   } = metricData;
+  
+  const avgUncachedSpeed = uncachedSpeeds.reduce((a,b) => a+b,0) / uncachedSpeeds.length;
+  const avgCachedSpeed = cachedSpeeds.reduce((a,b) => a+b,0) / cachedSpeeds.length;
+  
+  console.log(cachedSpeeds);
+  console.log(uncachedSpeeds);
 
-  const avgCachedSpeed = cachedSpeeds.reduce((a,b) => a+b) / cachedSpeeds.length;
-  const avgUncachedSpeed = uncachedSpeeds.reduce((a,b) => a+b) / uncachedSpeeds.length;
+  // let avgUncachedSpeed;
+  // if (uncachedSpeeds) {
+  //   avgUncachedSpeed= uncachedSpeeds.reduce((a,b) => a+b,0)
+  // }
 
-  const timeSaving = Math.round((1 - (avgCachedSpeed / avgUncachedSpeed)) * 100)
+  console.log('avgUncachedSpeed =', avgUncachedSpeed);
+
+  // let avgCachedSpeed;
+  // if (cachedSpeeds) {
+  //   avgCachedSpeed = cachedSpeeds.reduce((a,b) => a+b,0) 
+  // }
+
+  console.log('avgCachedSpeed =', avgCachedSpeed);
+
+
+  const timeSaving = Math.floor((1 - (avgCachedSpeed / avgUncachedSpeed)) * 100)
 
   const uncachedBar = {
     chartData: {
@@ -38,20 +56,23 @@ const Graph = ({ metricData }) => {
         align: 'end',
         anchor: 'end',
         font: { size: '14' }
+      },
+      legend: {
+        display: false
       }
     },
-    legend: {
-      labels: {
-          fontSize: 0
-      }
-    },
+    // legend: {
+    //   labels: {
+    //       fontSize: 0
+    //   }
+    // },
     responsive: true,
     maintainAspectRatio: false,
     indexAxis: 'y',
     scales: {
       x: {
         // gridLines: { display: false},
-        display: false,
+        display: false
       },
     },
   };
@@ -64,8 +85,8 @@ const Graph = ({ metricData }) => {
       {avgCachedSpeed && 
         <div className="savings">
           <div id="metrics"> 
-            <h3>{timeSaving}%</h3> 
-            <h5>avg time savings</h5>
+            <div id='percentage'>{timeSaving}%</div> 
+            <div id='savingsText'>avg time savings</div>
           </div>
         </div>
       }
