@@ -1,6 +1,6 @@
 import React from 'react';
 import './TeamMembers.scss';
-import ak from '../assets/AK.jpg';
+import ak from '../assets/ak.jpg';
 import harry from '../assets/harry.jpeg';
 import kh from '../assets/kh.jpg';
 import al from '../assets/al.png';
