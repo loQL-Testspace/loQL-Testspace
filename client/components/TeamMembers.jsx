@@ -1,25 +1,21 @@
 import React from 'react';
 import './TeamMembers.scss';
-import ak from '../assets/ak.jpg';
+import ak from '../assets/ak.png';
 import harry from '../assets/harry.jpeg';
 import kh from '../assets/kh.jpg';
 import al from '../assets/al.png';
-import jae from '../assets/jae.jpg'
+import jae from '../assets/jae.jpg';
 
 const TeamMembers = () => {
-  {
-    /*Add headshots and socials*/
-  }
-
   return (
     <div id="card-inner-container">
       <div className="card">
-        <img className="photo" src={jae}/>
+        <img className="photo" src={jae} />
         <div className="socials">
-          <a href="https://github.com/jae-ryu"  target="_blank" >
-            <i className="fab fa-2x fa-github"></i> 
+          <a href="https://github.com/jae-ryu" target="_blank">
+            <i className="fab fa-2x fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/jaeryu/ "  target="_blank" >
+          <a href="https://www.linkedin.com/in/jaeryu/ " target="_blank">
             <i className="fab fa-2x fa-linkedin"></i>
           </a>
         </div>
@@ -27,15 +23,15 @@ const TeamMembers = () => {
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img className="photo" src={harry}/>
+        <img className="photo" src={harry} />
         <div className="socials">
-          <a href="https://github.com/harrisoncramer"  target="_blank" >
+          <a href="https://github.com/harrisoncramer" target="_blank">
             <i className="fab fa-2x fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/harrison-cramer/"  target="_blank" >
+          <a href="https://www.linkedin.com/in/harrison-cramer/" target="_blank">
             <i className="fab fa-2x fa-linkedin"></i>
           </a>
-          <a href="https://twitter.com/harrisoncramer"  target="_blank" >
+          <a href="https://twitter.com/harrisoncramer" target="_blank">
             <i className="fab fa-2x fa-twitter-square"></i>
           </a>
         </div>
@@ -43,15 +39,15 @@ const TeamMembers = () => {
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img className="photo" src={al}/>
+        <img className="photo" src={al} />
         <div className="socials">
-          <a href="https://github.com/lolfill"  target="_blank" >
+          <a href="https://github.com/lolfill" target="_blank">
             <i className="fab fa-2x fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/andrew-f-lee/"  target="_blank" >
+          <a href="https://www.linkedin.com/in/andrew-f-lee/" target="_blank">
             <i className="fab fa-2x fa-linkedin"></i>
           </a>
-          <a href="https://twitter.com/fill_LOL"  target="_blank" >
+          <a href="https://twitter.com/fill_LOL" target="_blank">
             <i className="fab fa-2x fa-twitter-square"></i>
           </a>
         </div>
@@ -61,10 +57,10 @@ const TeamMembers = () => {
       <div className="card">
         <img className="photo" src={ak} width="200" height="250" />
         <div className="socials">
-          <a href="https://github.com/andrewkess"  target="_blank" >
+          <a href="https://github.com/andrewkess" target="_blank">
             <i className="fab fa-2x fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/andrewkessinger/"  target="_blank" >
+          <a href="https://www.linkedin.com/in/andrewkessinger/" target="_blank">
             <i className="fab fa-2x fa-linkedin"></i>
           </a>
         </div>
@@ -72,12 +68,12 @@ const TeamMembers = () => {
         <p className="subtext">Co-founder/Software Engineer</p>
       </div>
       <div className="card">
-        <img className="photo" src={kh}/>
+        <img className="photo" src={kh} />
         <div className="socials">
-          <a href="https://github.com/uitie"  target="_blank" >
+          <a href="https://github.com/uitie" target="_blank">
             <i className="fab fa-2x fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/konstantinhamilton/"  target="_blank" >
+          <a href="https://www.linkedin.com/in/konstantinhamilton/" target="_blank">
             <i className="fab fa-2x fa-linkedin"></i>
           </a>
         </div>
@@ -89,4 +85,3 @@ const TeamMembers = () => {
 };
 
 export default TeamMembers;
-

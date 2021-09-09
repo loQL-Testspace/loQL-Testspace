@@ -5,29 +5,31 @@ import { Bar, Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import './Graph.scss';
 
-
 const Graph = ({ metricData }) => {
   // Comes from the summary function.
-  const {
-    cachedSpeeds,
-    uncachedSpeeds
-  } = metricData;
-  
-  const avgUncachedSpeed = Math.round(uncachedSpeeds.reduce((a,b) => a+b,0) / uncachedSpeeds.length);
-  const avgCachedSpeed = Math.round(cachedSpeeds.reduce((a,b) => a+b,0) / cachedSpeeds.length);
-  
-  const timeSaving = Math.floor((1 - (avgCachedSpeed / avgUncachedSpeed)) * 100)
+  const { cachedSpeeds, uncachedSpeeds } = metricData;
+
+  const avgUncachedSpeed = Math.round(
+    uncachedSpeeds.reduce((a, b) => a + b, 0) / uncachedSpeeds.length
+  );
+  const avgCachedSpeed = Math.round(cachedSpeeds.reduce((a, b) => a + b, 0) / cachedSpeeds.length);
+
+  const countUncached = uncachedSpeeds.length;
+  const countCached = cachedSpeeds.length;
+
+  const timeSaving = Math.floor((1 - avgCachedSpeed / avgUncachedSpeed) * 100);
 
   const dataBar = {
     chartData: {
-      labels: ['Fetched from Server', 'Fetched from Cache'],
+      labels: [`From Server (${countUncached})`, `From Cache (${countCached})`],
       datasets: [
         {
           type: 'bar',
           label: ['Uncached Speeds (ms)', 'Cached Speeds (ms)'],
           data: [avgUncachedSpeed, avgCachedSpeed],
-          backgroundColor: ['rgba(171, 183, 183, 1)', 'rgba(75, 192, 192, 1)']
-        }
+          backgroundColor: ['#ffb9a7', 'rgba(75, 192, 192, 1)'],
+          // backgroundColor: ['rgba(171, 183, 183, 1)', 'rgba(75, 192, 192, 1)'],
+        },
       ],
     },
   };
@@ -36,15 +38,15 @@ const Graph = ({ metricData }) => {
     plugins: {
       datalabels: {
         display: true,
-        color: '#f74219',
+        color: '#5f5857', // Color of the numbers
         align: 'right',
         offset: 10,
         anchor: 'start',
-        font: { size: '18', fontFamily: 'Roboto', weight: 'bold' },
-        formatter: function(value) {
+        font: { size: '18', fontFamily: 'Roboto' },
+        formatter: function (value) {
           if (isNaN(value)) return '';
           return value.toLocaleString() + ' ms';
-        }
+        },
       },
       legend: {
         display: false,
@@ -59,25 +61,24 @@ const Graph = ({ metricData }) => {
       },
       y: {
         ticks: {
-          font: { size: '15', fontFamily: 'Roboto' }
-        }
-      }
+          color: '#5f5857',
+          font: { size: '15', fontFamily: 'Roboto' },
+        },
+      },
     },
   };
 
   return (
     <div className="speedBar">
       <div className="graph">
-        <Bar data={dataBar.chartData} plugins={[ChartDataLabels]} options={barOptions}/>
+        <Bar data={dataBar.chartData} plugins={[ChartDataLabels]} options={barOptions} />
       </div>
-        <div className="savings">
-          <div id="metrics"> 
-          {avgCachedSpeed ? 
-            <div id='percentage'>{timeSaving}%</div> : <div id='percentage'>%</div>
-          }
-            <div id='savingsText'>avg time savings</div>
-          </div>
+      <div className="savings">
+        <div id="metrics">
+          {avgCachedSpeed ? <div id="percentage">{timeSaving}%</div> : <div id="percentage">0%</div>}
+          <div id="savingsText">avg time savings</div>
         </div>
+      </div>
     </div>
   );
 };

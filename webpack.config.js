@@ -38,7 +38,7 @@ export default {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|jpeg)$/i,
+        test: /\.(png|jpg|gif|jpeg|ico)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -56,6 +56,7 @@ export default {
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
+      favicon: './client/assets/favicon.ico',
     }),
   ],
   devServer: {

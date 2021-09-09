@@ -5,10 +5,10 @@
 }
 
 .button-list {
-
   button {
-    width: 7rem;
-    height: 4rem;
+    width: 8rem;
+    height: 5rem;
+    padding: 0.5rem;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
     color: white;
     background-color: variables.$theme-color-main;
@@ -20,7 +20,6 @@
     font-size: 20px;
     font-weight: bold;
     &:hover {
-      
       filter: brightness(108%);
       cursor: pointer;
     }
@@ -30,13 +29,12 @@
 
 .queryData {
   display: flex;
-  margin-top:  0.5em;
-  margin-bottom: 0.5em; 
+  margin-top: 0.5em;
+  margin-bottom: 2rem;
   max-width: 100%;
   max-height: 250px;
   overflow: auto;
 }
-
 
 .query {
   display: flex;
@@ -54,8 +52,8 @@
   }
 }
 
-h2{
-  color: variables.$theme-color-light-black;  
+h2 {
+  color: variables.$theme-color-light-black;
 }
 
 pre.__json-pretty__ {
@@ -64,4 +62,18 @@ pre.__json-pretty__ {
 
 .main-left {
   margin-bottom: 3rem;
+}
+
+@media all and (max-width: 610px) {
+  .query .tophalf {
+    flex-direction: column;
+  }
+
+  .graph {
+    margin-left: 0px;
+  }
+
+  .queryData {
+    max-height: none;
+  }
 }

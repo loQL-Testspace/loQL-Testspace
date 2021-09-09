@@ -4,7 +4,8 @@ import NavBar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import DemoContainer from './containers/DemoContainer';
 import MainContainer from './containers/MainContainer';
-import TeamContainer from "./containers/TeamContainer";
+import TeamContainer from './containers/TeamContainer';
+import DocsContainer from './containers/DocsContainer';
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
           <Route path="/demo">
             <DemoContainer />
           </Route>
+          <Route path="/docs">
+            <DocsContainer />
+          </Route>
           <Route path="/team">
             <TeamContainer />
           </Route>
@@ -23,7 +27,7 @@ const App = () => {
           </Route>
         </Switch>
       </div>
-      <Footer className="footer"/>
+      <Footer className="footer" />
     </Router>
   );
 };

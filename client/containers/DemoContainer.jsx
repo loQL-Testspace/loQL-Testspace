@@ -18,6 +18,7 @@ const Demo = () => {
   const [query2Data, setQuery2Data] = useState(null);
   const [query3Data, setQuery3Data] = useState(null);
   const [query4Data, setQuery4Data] = useState(null);
+
   const [inHover, setHover] = useState(false);
   const query1Info = JSON.parse(query1.body).query;
   const query2Info = JSON.parse(query2.body).query;
@@ -25,11 +26,12 @@ const Demo = () => {
   const query4Info = JSON.parse(query4.body).query;
 
   const hashedKeyLookup = {
-    'query1': "f21b6ea98bc3144c499b59194c73a3ef",
-    'query2': "f73c9324f415aeebe8c5e711fe74dc1a",
-    'query3': "6f98006891d838f1c8b7c21119b7a12d",
-    'query4': "bbfb37ba5726ce186cf324623d6a65e0"
-  }
+    query1: 'f21b6ea98bc3144c499b59194c73a3ef',
+    query2: 'f73c9324f415aeebe8c5e711fe74dc1a',
+    query3: '6f98006891d838f1c8b7c21119b7a12d',
+    query4: 'bbfb37ba5726ce186cf324623d6a65e0',
+  };
+
   // Performs fetch to backend, which proxies the request to the R+M API.
   // We are sending post requests so they will get picked up by the express backend.
   const getDataFromAPI = async (queryNumber) => {
@@ -54,10 +56,8 @@ const Demo = () => {
     setStateFromData({ data }, queryNumber);
   };
 
-  
   // Sets state, metrics then passed into ChartJS for display Data is passed into ReactJSON for display.
   async function setStateFromData({ data }, queryNumber) {
-
     let hashedKey;
     let queryMetrics;
     switch (queryNumber) {
@@ -70,7 +70,7 @@ const Demo = () => {
         break;
       case 2:
         hashedKey = hashedKeyLookup.query2;
-        queryMetrics = await get('metrics', hashedKey)
+        queryMetrics = await get('metrics', hashedKey);
         setQuery2Metrics(queryMetrics);
         setQuery2Data(data);
         break;
@@ -98,34 +98,35 @@ const Demo = () => {
         }
       }
     }
-  `
+  `;
 
   return (
     <div className="demo-content">
       <div className="main-left">
-        <div className="bigTitle">
-          See the benefits of our solution
-        </div>
-        <div className="bigDescription">
-          Each button below represents GraphQL queries of varying complexities.
-          Click each to compare data retrieval speeds from cache vs. server,
-          in addition to the returned data for the client using the <a href='https://rickandmortyapi.com/'>Rick & Morty API</a>
-        </div>
-      </div>    
+        <h1>See the benefits of our solution</h1>
+        <p>
+          Each button below represents GraphQL queries of varying complexities. Click each to
+          compare data retrieval speeds from cache vs. server, in addition to the returned data for
+          the client using the <a href="https://rickandmortyapi.com/">Rick & Morty API</a>
+        </p>
+      </div>
 
       <div className="query">
-        <div className='tophalf'>
+        <div className="tophalf">
           <div className="button-list">
-            <button className="queries" onClick={() => getDataFromAPI(1)} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
+            <button
+              className="queries"
+              onClick={() => getDataFromAPI(1)}
+              // onMouseOver={() => setHover(true)}
+              // onMouseOut={() => setHover(false)}
+            >
               Get Homeworld
             </button>
             {/* {inHover ? 
               <QueryModal queryInfo={query1Info}/> : null
             } */}
           </div>
-          <div className="queryMetric">
-            {query1Metrics && <Graph metricData={query1Metrics} />}
-          </div>
+          <div className="queryMetric">{query1Metrics && <Graph metricData={query1Metrics} />}</div>
         </div>
         <div className="queryData">
           {query1Data && (
@@ -137,24 +138,26 @@ const Demo = () => {
                 collapsed={3}
                 displayDataTypes={false}
               />
-            </div> 
+            </div>
           )}
         </div>
       </div>
-
       <div className="query">
-        <div className='tophalf'>
+        <div className="tophalf">
           <div className="button-list">
-            <button className="queries" onClick={() => getDataFromAPI(2)} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
+            <button
+              className="queries"
+              onClick={() => getDataFromAPI(2)}
+              // onMouseOver={() => setHover(true)}
+              // onMouseOut={() => setHover(false)}
+            >
               Get Characters
             </button>
             {/* {inHover ? 
               <QueryModal queryInfo={query2Info}/> : null
             } */}
           </div>
-          <div className="queryMetric">
-            {query2Metrics && <Graph metricData={query2Metrics} />}
-          </div>
+          <div className="queryMetric">{query2Metrics && <Graph metricData={query2Metrics} />}</div>
         </div>
         <div className="queryData">
           {query2Data && (
@@ -170,20 +173,22 @@ const Demo = () => {
           )}
         </div>
       </div>
-
       <div className="query">
-        <div className='tophalf'>
+        <div className="tophalf">
           <div className="button-list">
-            <button className="queries" onClick={() => getDataFromAPI(3)} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
+            <button
+              className="queries"
+              onClick={() => getDataFromAPI(3)}
+              // onMouseOver={() => setHover(true)}
+              // onMouseOut={() => setHover(false)}
+            >
               Get Episodes
             </button>
             {/* {inHover ? 
               <QueryModal queryInfo={query3Info}/> : null
             } */}
           </div>
-          <div className="queryMetric">
-            {query3Metrics && <Graph metricData={query3Metrics} />}
-          </div>
+          <div className="queryMetric">{query3Metrics && <Graph metricData={query3Metrics} />}</div>
         </div>
         <div className="queryData">
           {query3Data && (
@@ -199,20 +204,22 @@ const Demo = () => {
           )}
         </div>
       </div>
-
       <div className="query">
-        <div className='tophalf'>
+        <div className="tophalf">
           <div className="button-list">
-            <button className="queries" onClick={() => getDataFromAPI(4)} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
+            <button
+              className="queries"
+              onClick={() => getDataFromAPI(4)}
+              // onMouseOver={() => setHover(true)}
+              // onMouseOut={() => setHover(false)}
+            >
               Get Locations
             </button>
             {/* {inHover ? 
               <QueryModal queryInfo={query4Info}/> : null
             } */}
           </div>
-          <div className="queryMetric">
-            {query4Metrics && <Graph metricData={query4Metrics} />}
-          </div>
+          <div className="queryMetric">{query4Metrics && <Graph metricData={query4Metrics} />}</div>
         </div>
         <div className="queryData">
           {query4Data && (
@@ -228,6 +235,8 @@ const Demo = () => {
           )}
         </div>
       </div>
+      <div className={'metrics'}></div>
+      <div className={'data'}></div>
     </div>
   );
 };

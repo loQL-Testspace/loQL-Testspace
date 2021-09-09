@@ -3,33 +3,34 @@
 #team-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .subtext {
     color: variables.$theme-color-subtext-grey;
   }
 
   #team-container {
-    margin-top: 10rem;
     display: flex;
+    width: 90%;
   }
 
   #team-summary {
-    width: 80%;
+    width: 90%;
     justify-content: center;
   }
 
-  #team-cards{
+  #team-cards {
     margin-top: 5rem;
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1000px) {
   #team-content {
-    display : flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -44,8 +45,5 @@
     p {
       font-size: 1em;
     }
-
-}
-
-  
+  }
 }
