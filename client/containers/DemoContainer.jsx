@@ -98,14 +98,17 @@ const Demo = () => {
 
   return (
     <div className="demo-content">
-      <div id="main-left">
-        <div className="bigTitle">See the benefits of our solution</div>
+      <div className="main-left">
+        <div className="bigTitle">
+          See the benefits of our solution
+        </div>
         <div className="bigDescription">
           Each button below represents GraphQL queries of varying complexities.
           Click each to compare data retrieval speeds from cache vs. server,
           in addition to the returned data for the client, using the <a href='https://rickandmortyapi.com/'>Rick & Morty API</a>
         </div>
-      </div>      
+      </div>    
+
       <div className="query">
         <div className='tophalf'>
           <div className="button-list">
