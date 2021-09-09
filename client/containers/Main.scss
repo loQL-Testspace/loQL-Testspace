@@ -108,8 +108,8 @@
   // object-fit: cover;
 // height: 500px !important;
   //  margin: -107px -100px -181px -100px !important;
-height:100%;
 width:100%;
+// border: 1px solid green;
 }
 
 .splash-img{
@@ -188,11 +188,12 @@ width:100%;
     font-size: 3em;
     line-height: 1em;
     margin-bottom: 20px;
+    font-weight: bold;
   }
   
   .bigDescription {
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.3em;
   }
 
   .main {
@@ -234,11 +235,7 @@ width:100%;
     font-weight: bold;
   }
 
-  .bigDescription {
-    font-size: 1em;
-    line-height: 1.5em;
-    padding-bottom: 1rem;
-  }
+ 
 
   .splash {
     display: flex;
