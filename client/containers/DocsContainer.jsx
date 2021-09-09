@@ -38,7 +38,7 @@ const DocsContainer = () => {
         <article className="main">
           <div className="splash">
             <div id="main-left">
-              <h3 className="bigTitle">Docs</h3>
+              <h1 className="bigTitle">Documentation</h1>
             </div>
           </div>
           <article className="docs">
@@ -99,7 +99,59 @@ const DocsContainer = () => {
             </section>
             <section>
               <h3>Configuration</h3>
-              <p>The service worker can be configured in a variety of ways. </p>
+              <p>
+                The loQL service worker is designed to be highly configurable. Each of these values
+                can be passed into the register function and will be used when the worker is first
+                registered to the page.
+              </p>
+              <div>
+                <div className="args">
+                  <span className="name">gqlEndpoints:</span>
+                  <span className="isRequired">Required</span>
+                  <span className="type">string[]</span>
+                  <p className="description">
+                    Add GraphQL endpoint URL's to be enabled for caching.
+                  </p>
+                </div>
+                <div className="args">
+                  <span className="name">useMetrics:</span>
+                  <span className="isRequired">Optional</span>
+                  <span className="type">boolean</span>
+                  <p className="description">Enable metrics collection.</p>
+                </div>
+                <div className="args">
+                  <span className="name">cacheMethod</span>
+                  <span className="isRequired">Optional</span>
+                  <span className="type">string</span>
+                  <p className="description">Desired caching strategy.</p>
+                </div>
+                <div className="args">
+                  <span className="name">cacheExpirationLimit</span>
+                  <span className="isRequired">Optional</span>
+                  <span className="type">Integer</span>
+                  <p className="description">
+                    Interval, in milliseconds, at which to refresh cached data.
+                  </p>
+                </div>
+                <div className="args">
+                  <span className="name">doNotCacheGlobal</span>
+                  <span className="isRequired">Optional</span>
+                  <span className="type">string[]</span>
+                  <p className="description">
+                    Define graphQL fields which, if detected in a query, will prevent the data from
+                    being cached.
+                  </p>
+                </div>
+                <div className="args">
+                  <span className="name">doNotCacheCustom</span>
+                  <span className="isRequired">Optional</span>
+                  <span className="type">string[]</span>
+                  <p className="description">
+                    Define endpoint-specific fields which, if detected in a query, will prevent the
+                    data from being cached.
+                  </p>
+                </div>
+              </div>
             </section>
             <section>
               <h3>Future Development</h3>
