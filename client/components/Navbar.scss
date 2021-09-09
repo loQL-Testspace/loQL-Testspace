@@ -4,6 +4,30 @@
   background-color: variables.$theme-color-main;
 }
 
+// Logos
+.icons {
+  .external i.fab {
+    font-size: 28px;
+    color: variables.$theme-color-light-white;
+    &:hover {
+      color: variables.$theme-color-hover;
+    }
+  }
+}
+
+@media all and (max-width: 575px) {
+  .icons {
+    padding-left: 1em;
+    padding-top: 0.5em;
+    .external {
+      padding: 0em;
+    }
+    .external i.fab {
+      padding-top: 0.25em;
+    }
+  }
+}
+
 .navbar-brand {
   display: flex;
   flex-direction: row;
@@ -21,7 +45,6 @@
   &:hover {
     color: variables.$theme-color-hover;
     text-decoration: none;
-
   }
 }
 
@@ -36,15 +59,3 @@
     color: variables.$theme-color-light-white;
   }
 }
-
-.external a,
-.external i{
-  font-size: 28px;
-  color: variables.$theme-color-light-white;
-
-  &:hover {
-    color: variables.$theme-color-hover;
-  }
-}
-
-

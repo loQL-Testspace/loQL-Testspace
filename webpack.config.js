@@ -59,7 +59,7 @@ export default {
     }),
   ],
   devServer: {
-    contentBase: './client',
+    static: './client',
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
