@@ -24,8 +24,6 @@ const Demo = () => {
   const query3Info = JSON.parse(query3.body).query;
   const query4Info = JSON.parse(query4.body).query;
 
-
-
   const hashedKeyLookup = {
     'query1': "f21b6ea98bc3144c499b59194c73a3ef",
     'query2': "f73c9324f415aeebe8c5e711fe74dc1a",
