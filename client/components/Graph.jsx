@@ -3,6 +3,8 @@ import { register } from 'loql-cache';
 import { avgDiff, uncahedAvg, cachedAvg, summary } from 'loql-cache/helpers/metrics.js';
 import { Bar, Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import './Graph.scss';
+
 
 const Graph = ({ metricData }) => {
   // Comes from the summary function.
