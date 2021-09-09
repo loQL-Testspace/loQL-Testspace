@@ -99,7 +99,7 @@ const Graph = ({ metricData }) => {
 
   return (
     <div>
-      <div id="speedBar">
+      <div id="speedBar" >
         <Bar data={uncachedBar.chartData} options={barOptions} />
         {/* <Bar data={uncachedBar2.chartData} options={barOptions2} /> */}
       </div>
