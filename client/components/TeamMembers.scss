@@ -43,11 +43,110 @@ socials - justify content
       display: flex;
       color: black!important;
       font-size: 1.25em;
+      margin: 0;
     }
 
-    .subText {
+    .subtext {
       justify-content: center;
       align-items: center;
+      margin: 0;
     }
   }
 }
+
+@media all and (max-width: 768px) {
+  #card-inner-container { 
+    display: flex;
+    width: 100%;
+    flex-flow: column wrap;
+    align-items: center;
+  
+    .card {
+      gap: 1em;
+      padding: 1em;
+      display: flex;
+      // width: 70%;
+      // height: 20rem;
+      // flex-flow: column wrap;
+  
+      .photo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .socials {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .25em;
+  
+        .fab {
+          color: #de5f43!important;
+        }
+      }
+      
+      .name  {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        color: black!important;
+        font-size: 1.25em;
+      }
+  
+      .subText {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  
+}
+
+// @media all and (min-width: 768) {
+//   #card-inner-container { 
+//     display: flex;
+//     width: 100%;
+//     flex-flow: row wrap;
+//     align-items: center;
+  
+//     .card {
+//       gap: 1em;
+//       padding: 1em;
+//       display: flex;
+//       // width: 70%;
+//       // height: 20rem;
+//       // flex-flow: column wrap;
+  
+//       .photo {
+//         margin-left: auto;
+//         margin-right: auto;
+//       }
+  
+//       .socials {
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         gap: .25em;
+  
+//         .fab {
+//           color: #de5f43!important;
+//         }
+//       }
+      
+//       .name  {
+//         justify-content: center;
+//         align-items: center;
+//         display: flex;
+//         color: black!important;
+//         font-size: 1.25em;
+//       }
+  
+//       .subText {
+//         justify-content: center;
+//         align-items: center;
+//       }
+//     }
+//   }
+// }
