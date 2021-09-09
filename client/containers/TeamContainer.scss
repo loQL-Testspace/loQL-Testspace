@@ -3,6 +3,7 @@
 #team-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .subtext {
     color: variables.$theme-color-subtext-grey;
@@ -10,10 +11,11 @@
 
   #team-container {
     display: flex;
+    width: 90%;
   }
 
   #team-summary {
-    width: 80%;
+    width: 90%;
     justify-content: center;
   }
 
@@ -26,7 +28,7 @@
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1000px) {
   #team-content {
     display: flex;
     justify-content: center;

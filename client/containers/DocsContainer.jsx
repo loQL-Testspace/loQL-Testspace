@@ -38,7 +38,7 @@ const DocsContainer = () => {
         <article className="main">
           <div className="splash">
             <div id="main-left">
-              <h1 className="bigTitle">Documentation</h1>
+              <h1>Documentation</h1>
             </div>
           </div>
           <article className="docs">
