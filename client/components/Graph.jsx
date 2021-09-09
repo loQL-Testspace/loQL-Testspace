@@ -64,9 +64,16 @@ const Graph = ({ metricData }) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="speedBar">
       <div className="graph">
         <Bar data={dataBar.chartData} plugins={[ChartDataLabels]} options={barOptions}/>
+=======
+    <div>
+      <div id="speedBar" >
+        <Bar data={uncachedBar.chartData} options={barOptions} />
+        {/* <Bar data={uncachedBar2.chartData} options={barOptions2} /> */}
+>>>>>>> 9d62a9eeb4739b95531d461a104ca0595c1b3c14
       </div>
         <div className="savings">
           <div id="metrics"> 
