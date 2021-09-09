@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/jae-ryu/Test-Enviorment#readme",
   "dependencies": {
+    "@fontsource/ibm-plex-sans": "^4.5.1",
+    "@fontsource/poppins": "^4.5.0",
+    "@fontsource/roboto": "^4.5.0",
     "chartjs-plugin-datalabels": "^2.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
