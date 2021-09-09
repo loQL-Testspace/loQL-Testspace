@@ -11,10 +11,13 @@
   font-size: 50px;
 }
 
-.feature p {
+
+.feature-title{
   font-weight: bold;
   font-size: 20px;
-}
+  //color: variables.$theme-color-complementary;
+ }
+
 
 //NEW CODE FROM BOOTSTRAP
 
@@ -85,14 +88,24 @@
   }
 
   #main-right {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+  
   }
 }
 
-.splash-img {
+.bike-animation {
+  // object-position: 100% 0;
+  // object-fit: cover;
+// height: 500px !important;
+  //  margin: -107px -100px -181px -100px !important;
+width:100%;
+// border: 1px solid green;
+}
+
+.splash-img{
   height: 200px;
 }
 
@@ -161,11 +174,12 @@
     font-size: 3em;
     line-height: 1em;
     margin-bottom: 20px;
+    font-weight: bold;
   }
 
   .bigDescription {
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.3em;
   }
 
   .main {
@@ -206,11 +220,7 @@
     font-weight: bold;
   }
 
-  .bigDescription {
-    font-size: 1em;
-    line-height: 1.5em;
-    padding-bottom: 1rem;
-  }
+ 
 
   .splash {
     display: flex;
