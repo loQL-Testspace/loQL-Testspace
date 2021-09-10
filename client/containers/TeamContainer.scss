@@ -3,21 +3,23 @@
 #team-content {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  align-items: center;
 
   .subtext {
     color: variables.$theme-color-subtext-grey;
   }
 
   #team-container {
-    margin-top: 10rem;
+    display: flex;
+    width: 90%;
   }
 
   #team-summary {
-    width: 50%;
+    width: 90%;
+    justify-content: center;
   }
 
-  #team-cards{
+  #team-cards {
     margin-top: 5rem;
     width: 100%;
     display: flex;
@@ -26,4 +28,22 @@
   }
 }
 
+@media all and (max-width: 1000px) {
+  #team-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    #team-container {
+      margin-top: 0em;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}

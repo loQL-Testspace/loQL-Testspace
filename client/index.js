@@ -2,15 +2,15 @@ import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import { render } from 'react-dom';
 import App from './app.jsx';
-import { register } from 'loql';
+import { register } from 'loql-cache';
 
 //Bootstrap CSS needed for styling React Bootstrap components
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.scss';
 
 register({
-  gqlEndpoints: ['http://localhost:3000/api/graphql'],
-  cacheExpirationLimit: 20000,
+  gqlEndpoints: [process.env.ENDPOINT, 'https://rickandmortyapi.com/graphql'],
+  cacheExpirationLimit: 10000,
   cacheMethod: 'cache-network',
 });
 

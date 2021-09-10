@@ -2,13 +2,14 @@ import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-when-using-the-experimental-modules-flag
 
 export default {
   entry: {
     index: './client/index.js',
     bundle: './client/app.jsx',
-    loQL: './node_modules/loql/loQL.js',
+    loQL: './node_modules/loql-cache/loQL.js',
   },
   devtool: 'eval-source-map',
   output: {
@@ -28,7 +29,6 @@ export default {
         },
       },
       {
-        //Andrew: Not sure how to load in css files but trying this way since it seems the former version only processed scss files...
         test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
@@ -38,7 +38,7 @@ export default {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|jpeg|ico)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -51,23 +51,28 @@ export default {
     ],
   },
   plugins: [
+    new Dotenv({
+      path: path.resolve(__dirname, `./.${process.env.NODE_ENV}.env`),
+    }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
+      favicon: './client/assets/favicon.ico',
     }),
   ],
   devServer: {
-    contentBase: './client',
+    static: './client',
     historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     proxy: {
       '/api/**': {
-        target: 'http://localhost:4000/',
-        // secure: false,
+        target: 'http://localhost:3000/',
         logLevel: 'debug',
       },
     },
   },
   resolve: {
-    // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
   },
 };

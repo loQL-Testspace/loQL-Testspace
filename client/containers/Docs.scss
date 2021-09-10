@@ -1,0 +1,55 @@
+@use '../variables';
+
+.bigTitle {
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+
+.main {
+  padding-top: 0px;
+  text-align: left;
+
+  a {
+    color: variables.$theme-color-complementary;
+    &:hover {
+      color: variables.$theme-color-hover;
+    }
+  }
+
+  section {
+    margin-bottom: 1em;
+  }
+}
+
+.args {
+  p.isOptional,
+  p.isRequired {
+    padding-bottom: 0px;
+  }
+
+  span {
+    font-family: monospace;
+    padding-right: 0.5rem;
+  }
+
+  span.isOptional,
+  span.isRequired {
+    font-style: italic;
+  }
+
+  // .isRequired {
+  //   color: variables.$theme-color-main;
+  // }
+
+  // .isOptional {
+  //   color: variables.$theme-color-subtext-grey;
+  // }
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+pre {
+  padding: 1em !important;
+}

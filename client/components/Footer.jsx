@@ -7,14 +7,14 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <Navbar bg="light" expand="sm" fixed="bottom">
+    <Navbar bg="light" expand="sm" id="foot-margin">
       <Container>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <Navbar.Text>
               Product development accelerated by{' '}
               <a href="https://opensourcelabs.io/" target="_blank">
-                OS Labs
+                OSLabs
               </a>
               . Issues or concerns? Report them to our{' '}
               <a href="https://github.com/oslabs-beta/loQL" target="_blank">
