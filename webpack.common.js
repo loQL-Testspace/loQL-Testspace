@@ -1,6 +1,7 @@
 import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-when-using-the-experimental-modules-flag
@@ -27,15 +28,6 @@ export default {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(png|jpg|gif|jpeg|ico|mp4)$/i,
         use: [
           {
@@ -56,6 +48,7 @@ export default {
       template: './client/index.html',
       favicon: './client/assets/favicon.ico',
     }),
+    new MiniCssExtractPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
