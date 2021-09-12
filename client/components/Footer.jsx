@@ -13,11 +13,11 @@ const Footer = () => {
           <Nav>
             <Navbar.Text>
               Product development accelerated by{' '}
-              <a href="https://opensourcelabs.io/" target="_blank">
+              <a href="https://opensourcelabs.io/" rel="noreferrer" target="_blank">
                 OSLabs
               </a>
               . Issues or concerns? Report them to our{' '}
-              <a href="https://github.com/oslabs-beta/loQL" target="_blank">
+              <a href="https://github.com/oslabs-beta/loQL" rel="noreferrer" target="_blank">
                 {' '}
                 GitHub{' '}
               </a>{' '}
