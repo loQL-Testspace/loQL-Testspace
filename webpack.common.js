@@ -13,7 +13,7 @@ export default {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[contenthash].js',
+    filename: '[name].js',
     clean: true,
   },
   module: {
