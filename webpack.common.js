@@ -36,7 +36,7 @@ export default {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|jpeg|ico)$/i,
+        test: /\.(png|jpg|gif|jpeg|ico|mp4)$/i,
         use: [
           {
             loader: 'url-loader',
