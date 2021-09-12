@@ -15,17 +15,6 @@ export default merge(common, {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
-      {
-        test: /\.(png|jpg|gif|jpeg|ico|mp4)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
     ],
   },
   devServer: {
