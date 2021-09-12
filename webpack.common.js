@@ -11,13 +11,11 @@ export default {
     bundle: './client/app.jsx',
     loQL: './node_modules/loql-cache/loQL.js',
   },
-  devtool: 'eval-source-map',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
     clean: true,
   },
-  mode: process.env.NODE_ENV, // "development" or "production"
   module: {
     rules: [
       {
@@ -38,7 +36,7 @@ export default {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|jpeg|ico)$/i,
+        test: /\.(png|jpg|gif|jpeg|ico|mp4)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -59,19 +57,6 @@ export default {
       favicon: './client/assets/favicon.ico',
     }),
   ],
-  devServer: {
-    static: './client',
-    historyApiFallback: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    proxy: {
-      '/api/**': {
-        target: 'http://localhost:3000/',
-        logLevel: 'debug',
-      },
-    },
-  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },

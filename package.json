@@ -7,9 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run dev:webpack\" \"npm run dev:express\"",
-    "dev:webpack": "NODE_ENV=development webpack serve --open",
+    "dev:webpack": "NODE_ENV=development webpack serve --config webpack.dev.js",
     "dev:express": "NODE_ENV=development PORT=3000 nodemon server/index.js",
-    "prod:webpack": "NODE_ENV=production webpack",
+    "prod:webpack": "NODE_ENV=production webpack --config webpack.prod.js",
     "prod:express": "NODE_ENV=production PORT=3000 node server/index.js"
   },
   "repository": {
@@ -56,9 +56,11 @@
     "sass": "^1.39.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.2.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.52.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.2.0"
+    "webpack-dev-server": "^4.2.0",
+    "webpack-merge": "^5.8.0"
   }
 }

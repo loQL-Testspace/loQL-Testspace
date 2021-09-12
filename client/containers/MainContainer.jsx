@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import splashImg from '../assets/loql-animation.gif';
+import rider from '../assets/rider.mp4';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -23,8 +23,9 @@ const SplashPage = () => {
               </div>
             </div>
             <div id="main-right">
-              <img src={splashImg} className="bike-animation"></img>
-              {/* <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_g1mzbfkz.json"  background="transparent"  speed="1" loop autoplay className="bike-animation"></lottie-player> */}
+              <video autoPlay loop muted playsInline className="bike-animation">
+                <source src={rider} type="video/mp4" />
+              </video>
             </div>
           </div>
 
