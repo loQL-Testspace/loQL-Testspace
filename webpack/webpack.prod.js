@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import common from './webpack.common.js';
 export default merge(common, {
@@ -23,6 +24,7 @@ export default merge(common, {
   plugins: [
     new MiniCssExtractPlugin(),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/), // Avoid loading Moment.js with Chart.js
+    ...(process.env.ANALYZE ? [new BundleAnalyzerPlugin()] : []),
   ],
   optimization: {
     minimize: true,
