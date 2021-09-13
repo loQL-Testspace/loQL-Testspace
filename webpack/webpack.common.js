@@ -1,5 +1,4 @@
 import path from 'path';
-import webpack from 'webpack';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import CopyPlugin from 'copy-webpack-plugin';
@@ -51,7 +50,6 @@ export default {
     new Dotenv({
       path: path.resolve(__dirname, `../.${process.env.NODE_ENV}.env`),
     }),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/), // Avoid loading Moment.js with Chart.js
     new HtmlWebpackPlugin({
       template: './client/index.html',
       favicon: './client/assets/favicon.ico',
