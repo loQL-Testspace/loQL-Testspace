@@ -19,6 +19,7 @@ export default merge(common, {
       },
     ],
   },
+  plugins: [new MiniCssExtractPlugin()],
   optimization: {
     minimize: true,
     minimizer: ['...', new CssMinimizerPlugin()],
