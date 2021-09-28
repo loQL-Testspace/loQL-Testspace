@@ -71,11 +71,15 @@ const Graph = ({ metricData }) => {
   return (
     <div className="speedBar">
       <div className="graph">
-        <Bar data={dataBar.chartData} plugins={[ChartDataLabels]} options={barOptions} />
+        <Bar data={dataBar.chartData} options={barOptions} />
       </div>
       <div className="savings">
         <div id="metrics">
-          {avgCachedSpeed ? <div id="percentage">{timeSaving}%</div> : <div id="percentage">0%</div>}
+          {avgCachedSpeed ? (
+            <div id="percentage">{timeSaving}%</div>
+          ) : (
+            <div id="percentage">0%</div>
+          )}
           <div id="savingsText">avg time savings</div>
         </div>
       </div>

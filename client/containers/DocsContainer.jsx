@@ -1,9 +1,15 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import './Docs.scss';
+
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
+import dracula from 'react-syntax-highlighter/dist/esm/styles/hljs/dracula';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
+SyntaxHighlighter.registerLanguage('bash', bash);
 
 const webpack = `const path = require('path');
 

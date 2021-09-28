@@ -1,6 +1,8 @@
 import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import CopyPlugin from 'copy-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-when-using-the-experimental-modules-flag
@@ -11,13 +13,11 @@ export default {
     bundle: './client/app.jsx',
     loQL: './node_modules/loql-cache/loQL.js',
   },
-  devtool: 'eval-source-map',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '..', 'build'),
     filename: '[name].js',
     clean: true,
   },
-  mode: process.env.NODE_ENV, // "development" or "production"
   module: {
     rules: [
       {
@@ -29,16 +29,7 @@ export default {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|jpg|gif|jpeg|ico)$/i,
+        test: /\.(png|jpg|gif|jpeg|ico|mp4)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -51,27 +42,17 @@ export default {
     ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [{ from: './client/robots.txt', to: '.' }],
+    }),
     new Dotenv({
-      path: path.resolve(__dirname, `./.${process.env.NODE_ENV}.env`),
+      path: path.resolve(__dirname, `../.${process.env.NODE_ENV}.env`),
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
       favicon: './client/assets/favicon.ico',
     }),
   ],
-  devServer: {
-    static: './client',
-    historyApiFallback: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    proxy: {
-      '/api/**': {
-        target: 'http://localhost:3000/',
-        logLevel: 'debug',
-      },
-    },
-  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
